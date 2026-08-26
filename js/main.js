@@ -90,12 +90,22 @@
     counters.forEach(animateCount);
   }
 
-  var betaRibbon = document.getElementById("betaRibbon");
-  var betaClose = document.getElementById("betaClose");
-  if (betaRibbon && betaClose) {
-    betaClose.addEventListener("click", function () {
-      betaRibbon.remove();
-    });
+  var langHint = document.getElementById("langHint");
+  if (langHint) {
+    var dismissed = false;
+    try { dismissed = window.localStorage.getItem("agroLangHint") === "off"; } catch (e) {}
+    var navLang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+    var isKorean = /^ko/i.test(navLang);
+    var closeBtn = langHint.querySelector("[data-close]");
+    if (!dismissed && !isKorean) {
+      langHint.hidden = false;
+    }
+    if (closeBtn) {
+      closeBtn.addEventListener("click", function () {
+        langHint.hidden = true;
+        try { window.localStorage.setItem("agroLangHint", "off"); } catch (e) {}
+      });
+    }
   }
 
   var yearEl = document.getElementById("year");

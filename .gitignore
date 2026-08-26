@@ -1,3 +1,9 @@
 Thumbs.db
 Desktop.ini
 .DS_Store
+
+# Secrets — never commit
+.env
+tools/ecount/out/
+
+node_modules/
