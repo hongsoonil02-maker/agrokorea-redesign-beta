@@ -86,7 +86,6 @@ body.menu-open .mobile-menu{transform:none;visibility:visible}
 .mobile-menu-foot a{font-size:14px;font-weight:700;color:rgba(242,239,227,.75)}
 
 .hero{position:relative;padding:186px 0 96px;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-220px;right:-160px;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle at center,var(--lime-soft),transparent 62%);pointer-events:none}
 .hero-grid{display:grid;grid-template-columns:1.04fr .96fr;gap:56px;align-items:center;position:relative}
 .hero-title{margin-top:22px;font-size:clamp(34px,4.7vw,58px);line-height:1.17;letter-spacing:-.025em;font-weight:900;color:var(--forest-deep)}
 .hero-title em{font-style:normal;background:linear-gradient(transparent 64%,var(--lime) 64%)}
