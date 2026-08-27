@@ -39,6 +39,10 @@
     </nav>
     <div class="nav-side">
       <div class="nav-lang"><a class="on" href="rotagal.html" aria-current="page">KR</a><span>/</span><a href="../en/products/rotagal.html">EN</a></div>
+      <a class="btn-store-nav" href="https://smartstore.naver.com/petschury/profile" target="_blank" rel="noopener" aria-label="한국아그로 공식 네이버 스마트스토어 바로가기">
+        <span class="n-logo">N</span><span class="store-text">스마트스토어</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
       <a class="btn btn-lime" href="#contact">구매·도입 문의</a>
       <button class="burger" id="menuOpen" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -53,6 +57,16 @@
     <button class="mobile-menu-close" id="menuClose" type="button" aria-label="메뉴 닫기">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
+  </div>
+  <div class="mobile-store-box">
+    <a class="mobile-store-link" href="https://smartstore.naver.com/petschury/profile" target="_blank" rel="noopener">
+      <span class="n-logo">N</span>
+      <div class="ms-txt">
+        <strong>공식 네이버 스마트스토어</strong>
+        <span>한국아그로 공식 온라인몰 바로가기</span>
+      </div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
   </div>
   <nav aria-label="모바일 주 메뉴">
     <a href="../about.html">회사소개</a>
@@ -106,26 +120,125 @@
     </div>
   </section>
 
-  <section class="proof" aria-labelledby="proofTitle">
-    <div class="container" style="padding:0">
-      <span class="eyebrow" style="background:rgba(201,236,80,.16);color:var(--lime)">Field Evidence</span>
-      <h2 id="proofTitle" class="reveal in" style="margin-top:18px;font-size:clamp(26px,3vw,38px);letter-spacing:-.02em;font-weight:800">현장과 연구로 입증된 효과</h2>
-      <div class="proof-grid">
-        <article class="proof-card reveal">
-          <p class="big">폐사율<br />20~40% → 0%</p>
-          <h3>경상대학교 국내 실험 결과</h3>
-          <p>백신 접종군에서 송아지 폐사율 0% 확인, 설사 지속기간 절반 이하 단축. 체온·심박수·행동 변화 없는 안전성도 함께 확인되었습니다.</p>
-          <cite>출처: 축산신문 2025년 7월호 특집기사</cite>
+  <section class="press-section" id="evidence" aria-labelledby="evidenceTitle">
+    <div class="container">
+      <div class="section-head reveal in">
+        <span class="eyebrow">Field Evidence &amp; Press Report</span>
+        <h2 id="evidenceTitle">언론과 대학 임상으로 입증된<br />로타갈의 확실한 방어 효과</h2>
+        <p class="lede">축산신문 특집 기사 전문과 경상국립대학교 수의과대학 국내 임상 결과를 투명하고 선명하게 공개합니다.</p>
+      </div>
+
+      <div class="press-grid">
+        <!-- 1. 축산신문 기사 전문 카드 (HTML/CSS 텍스트 기반) -->
+        <article class="press-paper reveal in">
+          <header class="newspaper-masthead">
+            <div>
+              <span class="masthead-title">축산신문</span>
+              <span class="masthead-meta">제3640호 · 2025년 7월 25일 금요일 15면</span>
+            </div>
+            <span class="masthead-badge">기획특집</span>
+          </header>
+
+          <span class="press-subhead">한국아그로 '로타갈'</span>
+          <h3 class="press-main-title">로타·코로나·대장균<br />'3종 혼합 송아지설사 백신'</h3>
+
+          <div class="press-subtitles">
+            <p>• 어미소 초유 통해 항체 전달… 특수부형제 '항체가 지속'</p>
+            <p>• 폐사율 감소·설사강도 경감… 병원체로부터 송아지 보호</p>
+          </div>
+
+          <div class="press-stats-row">
+            <div class="press-stat-item">
+              <b>20~40% → 0%</b>
+              <span>공격접종군 폐사율</span>
+            </div>
+            <div class="press-stat-item">
+              <b>83% 감소</b>
+              <span>임상 설사도 점수 경감</span>
+            </div>
+            <div class="press-stat-item">
+              <b>64% 적게 배출</b>
+              <span>병원균 배출량 감소</span>
+            </div>
+          </div>
+
+          <div class="press-content">
+            <p>한국아그로(대표 홍효선)가 공급하고 있는 <strong>'로타갈(ROTAGAL)'</strong>은 소 로타바이러스, 코로나바이러스, 대장균(K99)을 동시에 방어하는 3종 혼합 송아지 설사병 예방 백신이다. 슬로바키아 소재 <strong>파마갈바이오(Pharmagal Bio)</strong>사에서 생산되며, <strong>EU GMP</strong> 기준을 바탕으로 독일·영국·호주 등 세계 40여 개국에 활발히 수출되고 있다.</p>
+            
+            <p>'로타갈'은 국내 발생 빈도가 높은 혈청형을 정밀 타깃팅한 <strong>TM91, G6P[5], G6P[1] 로타바이러스 항원</strong>과 <strong>C-197KWD20 코로나바이러스</strong>, <strong>K99 대장균 항원</strong>을 과학적으로 조합했다. 특히 수중유중수형(Water-in-Oil-in-Water) 특수부형제 <strong>'몬타나이드(Montanide) ISA 206'</strong>을 채택하여 체내 면역 반응과 높은 항체가를 오랜 기간 안정적으로 지속시킨다.</p>
+
+            <p><strong>임상 시험 및 작용 기전:</strong> 분만 전 어미소에 '로타갈'을 접종하면 고농도 모체이행항체(IgG)가 초유를 통해 신생 송아지에게 그대로 전달되어, 출생 직후 가장 취약한 시기 병원체 감염을 근본적으로 차단한다. 실험 결과, 로타갈을 접종받은 어미소 초유에서 풍부한 IgG 형성이 확인되었으며, 이를 섭취한 송아지 혈청 내 항체가 장기간 높게 유지되었다.</p>
+
+            <p><strong>경상국립대학교 수의과대학 국내 분리균주 공격실험:</strong> 실제 국내 농가에서 분리된 병원체로 진행한 공격실험에서 백신 미접종군은 20~40%의 송아지 폐사율을 기록한 반면, <strong>로타갈 접종군은 송아지 폐사율 0%</strong>를 완벽히 입증했다. 또한 평균 설사 지속기간도 미접종군(5.5~7일) 대비 <strong>1~2.5일로 절반 이하 대폭 단축</strong>되었으며, 체온·심박수·행동 이상 없는 탁월한 체내 안전성을 확인했다.</p>
+
+            <p>한국아그로 관계자는 "최적의 예방 효과를 거두기 위해서는 전체 우군에 로타갈을 접종하는 것이 중요하며, 설사병으로 인한 송아지 폐사 방지와 약품비 절감 등 농가 수익성 극대화에 크게 기여할 것"이라고 강조했다.</p>
+          </div>
+
+          <div class="press-reporter">
+            <span>축산신문 김영길 기자 (kimyg2908@naver.com)</span>
+            <button type="button" class="btn-view-scan" id="openScanModal">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+              축산신문 원본 지면 고화질 보기
+            </button>
+          </div>
         </article>
-        <article class="proof-card reveal" data-delay="1">
-          <p class="big">폐사 5두 →<br />1~2두</p>
-          <h3>한우 번식농가 도입 사례</h3>
-          <p>로타갈 도입 후 폐사 두 수가 눈에 띄게 감소하고 회복 속도도 개선된 현장 사례가 보도되었습니다.</p>
-          <cite>출처: 월간한우 2025년 8월호</cite>
+
+        <!-- 2. 로타갈 공식 임상 & 접종 가이드 포스터 -->
+        <article class="press-poster reveal in" data-delay="1">
+          <div class="poster-eu-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            EUROPEAN UNION GMP · 세계 최고 수준 품질
+          </div>
+
+          <h3>로타갈<sup style="font-size:.45em">®</sup> 핵심 임상 &amp; 접종 프로토콜</h3>
+          
+          <div class="poster-trial-box">
+            <strong>국내 임상 시험 결과 (경상국립대 수의과대학)</strong>
+            <p>최근 국내 분리 균주 감염 공격실험에서도 100% 생존 방어효과와 무부작용 안전성이 공식 검증되었습니다.</p>
+          </div>
+
+          <div class="poster-pathogens">
+            <div class="poster-pathogens-title">5대 병원체 원샷 동시 방어 항원</div>
+            <div class="pathogen-pills">
+              <div class="pathogen-pill"><span class="pp-num">1</span>로타바이러스 TM91</div>
+              <div class="pathogen-pill"><span class="pp-num">2</span>로타바이러스 G6P[5]<span class="pp-tag">국내 발생 82% 집중 방어</span></div>
+              <div class="pathogen-pill"><span class="pp-num">3</span>로타바이러스 G6P[1]</div>
+              <div class="pathogen-pill"><span class="pp-num">4</span>코로나바이러스 C-197KWD20</div>
+              <div class="pathogen-pill"><span class="pp-num">5</span>대장균 K99 (F5 섬모항원)</div>
+            </div>
+          </div>
+
+          <div class="poster-protocol">
+            <h4>표준 접종 프로그램 (원샷 원칙)</h4>
+            <ul>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>처음 접종하는 어미소:</strong> 분만 6~5주 전 1차, 분만 3~2주 전 2차 접종</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>접종 경험이 있는 어미소:</strong> 매 분만 6~3주 전 1회 단독 접종</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>접종 용량 및 부위:</strong> 어미소 두당 3ml 근육접종 (15ml / 5두분)</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg><span><strong>유럽 공인 권장:</strong> 분만 12주~3주 전 일괄 접종으로 전체 우군 면역 형성</span></li>
+            </ul>
+          </div>
+
+          <div class="poster-adjuvant">
+            <strong>Montanide ISA 206 VG Water-in-Oil-in-Water</strong>
+            프랑스 SEPPIC사의 특수 복합 부형제를 채택하여 접종 부위 자극을 최소화하고 혈중 및 초유 내 항체가를 최장 기간 유지합니다.
+          </div>
         </article>
       </div>
     </div>
   </section>
+
+  <!-- 원본 지면 고화질 뷰어 모달 -->
+  <div class="press-modal" id="scanModal" role="dialog" aria-modal="true" aria-label="축산신문 원본 지면">
+    <div class="press-modal-box">
+      <div class="press-modal-head">
+        <h4>축산신문 제3640호 15면 원본 지면 (2025.07.25)</h4>
+        <button type="button" class="press-modal-close" id="closeScanModal" aria-label="닫기">×</button>
+      </div>
+      <div class="press-modal-body">
+        <img src="../assets/img/press-rotagal-chuksan.png" alt="축산신문 로타갈 특집기사 및 공식 포스터 원본 지면" loading="lazy" />
+      </div>
+    </div>
+  </div>
 
   <section class="section spec-section" id="spec" aria-labelledby="specTitle">
     <div class="container">
@@ -197,5 +310,29 @@
 
 <script src="../js/main.js"></script>
 <script src="../js/chatbot.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('openScanModal');
+  var modal = document.getElementById('scanModal');
+  var close = document.getElementById('closeScanModal');
+  if(btn && modal && close){
+    btn.addEventListener('click', function(){
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    function hide(){
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    close.addEventListener('click', hide);
+    modal.addEventListener('click', function(e){
+      if(e.target === modal) hide();
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && modal.classList.contains('active')) hide();
+    });
+  }
+})();
+</script>
 </body>
 </html>

@@ -7,7 +7,7 @@
       name: "ROTAGAL® 로타갈",
       desc: { ko: "임신우 원샷 접종으로 송아지 설사병 3중 예방하는 EU GMP 백신", en: "EU GMP one-shot vaccine preventing calf diarrhea" },
       accent: "#d95d39",
-      naver: "",
+      naver: "https://smartstore.naver.com/petschury/profile",
       coupang: "",
       site: "https://rotagal.kr"
     },
@@ -16,7 +16,7 @@
       name: "VETACOL 베타콜",
       desc: { ko: "출생 직후 골든타임을 채우는 초유 면역 영양제 · 15ml 시린지", en: "Colostrum immune nutrition for newborns · 15 ml syringe" },
       accent: "#dfa32b",
-      naver: "",
+      naver: "https://smartstore.naver.com/petschury/profile",
       coupang: "",
       site: "https://vetacol.kr"
     },
@@ -25,7 +25,7 @@
       name: "PARVOGEL 파보겔",
       desc: { ko: "모든 동물 신생아 설사 케어 나노 몬모릴로나이트 보조제", en: "Nano montmorillonite anti-diarrheal support for newborns" },
       accent: "#7a5fc0",
-      naver: "",
+      naver: "https://smartstore.naver.com/petschury/profile",
       coupang: "",
       site: "https://parvogel.kr"
     },

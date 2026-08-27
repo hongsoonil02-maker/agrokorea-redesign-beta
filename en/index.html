@@ -71,11 +71,12 @@
     <a class="brand" href="index.html">
       <img class="brand-logo" src="../assets/img/logo.png" alt="Korea Agro Co., Ltd." width="704" height="152" />
     </a>
-    <nav class="main-nav" aria-label="Main menu">
+    <nav class="main-nav" aria-label="Main navigation">
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#flagship">Flagship Products</a></li>
         <li><a href="#products">Portfolio</a></li>
+        <li><a href="#store">Store</a></li>
         <li><a href="#partners">Partners</a></li>
         <li><a href="#rnd">R&amp;D</a></li>
         <li><a href="#news">News</a></li>
@@ -83,6 +84,10 @@
     </nav>
     <div class="nav-side">
       <div class="nav-lang"><a href="../index.html" lang="ko">KR</a><span>/</span><a class="on" href="index.html" aria-current="page">EN</a></div>
+      <a class="btn-store-nav" href="https://smartstore.naver.com/petschury/profile" target="_blank" rel="noopener" aria-label="Official Naver SmartStore">
+        <span class="n-logo">N</span><span class="store-text">SmartStore</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M7 7h10v10"/></svg>
+      </a>
       <a class="btn btn-lime" href="#contact">Contact Us</a>
       <button class="burger" id="menuOpen" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
@@ -98,10 +103,21 @@
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
     </button>
   </div>
+  <div class="mobile-store-box">
+    <a class="mobile-store-link" href="https://smartstore.naver.com/petschury/profile" target="_blank" rel="noopener">
+      <span class="n-logo">N</span>
+      <div class="ms-txt">
+        <strong>Official SmartStore</strong>
+        <span>Visit Korea Agro Online Shop</span>
+      </div>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+    </a>
+  </div>
   <nav aria-label="Mobile main menu">
     <a href="#about">About</a>
     <a href="#flagship">Flagship Products</a>
     <a href="#products">Portfolio</a>
+    <a href="#store">Online Store</a>
     <a href="#partners">Partners</a>
     <a href="#rnd">R&amp;D</a>
     <a href="#news">News</a>
@@ -283,12 +299,12 @@
     </div>
   </section>
 
-  <section class="section" style="padding-top:0" id="store" aria-labelledby="storeTitle" hidden>
+  <section class="section" style="padding-top:0" id="store" aria-labelledby="storeTitle">
     <div class="container">
       <div class="section-head reveal">
         <span class="eyebrow">Official Online Store</span>
         <h2 id="storeTitle">Official online stores</h2>
-        <p class="lede">Find AgroKorea products on our official Naver Smart Store and Coupang storefronts.</p>
+        <p class="lede">Discover AgroKorea products on our official Naver Smart Store online shop.</p>
       </div>
       <div class="store-grid reveal" data-store-strip></div>
       <p class="store-note reveal" data-store-note>Prices and availability follow each store in real time.</p>
@@ -341,8 +357,15 @@
           <p>Showcasing ROTAGAL and other livestock solutions with global partners DDC and VTR — drawing strong interest from Hanwoo industry professionals.</p>
           <span class="nc-arrow">Read article →</span>
         </a>
+        <a class="news-card reveal" data-delay="3" href="products/rotagal.html#evidence">
+          <img class="news-thumb" src="../assets/img/press-rotagal-chuksan.png" alt="Livestock News ROTAGAL Special Feature" loading="lazy" style="object-position:top" />
+          <div class="nc-meta"><span class="nc-tag">Press Feature</span><time datetime="2025-07-25">2025.07.25</time></div>
+          <h3>Livestock News: ROTAGAL® Verified 0% Calf Mortality in Academic Trials</h3>
+          <p>Gyeongsang National University challenge trials demonstrate 100% survival against domestic field isolates and halved scours duration with one-shot maternal vaccination.</p>
+          <span class="nc-arrow">Read full transcript &amp; clipping →</span>
+        </a>
       </div>
-      <div class="news-more reveal"><a class="btn btn-ghost" style="color:var(--forest-deep)" href="https://www.agrokorea.kr/eng/community/news.html?mode=1">View all news</a></div>
+      <div class="news-more reveal"><a class="btn btn-ghost" style="color:var(--forest-deep)" href="news.html">View all news</a></div>
     </div>
   </section>
 
