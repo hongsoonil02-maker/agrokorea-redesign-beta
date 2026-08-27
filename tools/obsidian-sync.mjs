@@ -7,13 +7,13 @@ try {
   
   if (fs.existsSync(vaultPath)) {
     const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
-    const logLine = `\n- [${now}] GitHub Issue #1(신문 기사/임상 포스터 텍스트 가독성 개선, 원본 지면 라이트박스 뷰어 구현) 및 Issue #2(전체 28개 페이지 네이버 스마트스토어 링크 배지/모바일 배너 추가) 반영 완료\n`;
+    const logLine = `\n- [${now}] 장애인 접근 편의 제공(K-WAH 2.2 / WCAG 2.2 웹 접근성 도우미 위젯, 3단계 글자 확대, 초고대비 7:1 테마, 가독성 폰트, 링크 강조, 모션 정지, 포커스 강화, 웹접근성 정책 모달) 전체 28개 페이지 일괄 구축 및 GitHub 배포 완료\n`;
     
     fs.appendFileSync(logFile, logLine, 'utf8');
     console.log('Appended log to', logFile);
     
     execSync(`git -C "${vaultPath}" add .`, { stdio: 'inherit' });
-    execSync(`git -C "${vaultPath}" commit -m "auto-sync: dev log update"`, { stdio: 'inherit' });
+    execSync(`git -C "${vaultPath}" commit -m "auto-sync: a11y suite and policy update"`, { stdio: 'inherit' });
     execSync(`git -C "${vaultPath}" push`, { stdio: 'inherit' });
     console.log('Synced agrolib to GitHub successfully.');
   } else {
