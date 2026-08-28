@@ -101,10 +101,19 @@
         <span class="eyebrow">Inquiries</span>
         <h2 id="formTitle" style="margin-top:18px">Send Us a Message</h2>
         <p style="margin-top:12px;color:var(--ink-soft)">Leave your contact details and message below. Our representative will respond within 1-2 business days.</p>
+        <!--
+          FormSubmit setup (email-hidden token method, optional):
+          The current action works immediately via email. To reduce spam scraping, switch to a token:
+          1) After deploy, submit this form once to https://formsubmit.co/name_hyosun@naver.com
+             to receive an activation link and a unique token (e.g. abc123xyz) by email.
+          2) Replace the email address in the action below with the token (https://formsubmit.co/YOUR_TOKEN)
+             so the real email address is not exposed in the page source (anti-spam).
+        -->
         <form action="https://formsubmit.co/name_hyosun@naver.com" method="POST" style="margin-top:28px;display:grid;gap:14px">
           <input type="hidden" name="_subject" value="[Korea Agro Website] New Inquiry" />
+          <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
-          <input type="text" name="_honey" style="display:none" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label style="display:grid;gap:6px"><span style="font-size:13px;font-weight:700">Full Name <span aria-hidden="true">*</span></span><input required name="name" autocomplete="name" style="padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--surface)" /></label>
           <label style="display:grid;gap:6px"><span style="font-size:13px;font-weight:700">Company / Organization</span><input name="company" autocomplete="organization" style="padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--surface)" /></label>
           <label style="display:grid;gap:6px"><span style="font-size:13px;font-weight:700">Email Address <span aria-hidden="true">*</span></span><input required type="email" name="email" autocomplete="email" style="padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--surface)" /></label>
@@ -119,7 +128,7 @@
             </select>
           </label>
           <label style="display:grid;gap:6px"><span style="font-size:13px;font-weight:700">Message <span aria-hidden="true">*</span></span><textarea required name="message" rows="5" style="padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--surface);resize:vertical"></textarea></label>
-          <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink-soft)"><input type="checkbox" required name="agree" style="margin-top:3px" /> <span>I agree to the collection and use of personal details solely for responding to this inquiry.</span></label>
+          <label style="display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--ink-soft)"><input type="checkbox" required name="agree" style="margin-top:3px" /> <span>I agree to the <a href="privacy.html">collection and use of personal details</a> solely for responding to this inquiry.</span></label>
           <button type="submit" class="btn btn-primary" style="margin-top:8px;justify-self:start">Submit Inquiry</button>
         </form>
       </div>
@@ -170,8 +179,11 @@
     </div>
     <div class="footer-bottom">
       <p>ⓒ <span id="year">2026</span> Korea Agro Co., Ltd. All rights reserved.</p>
-      <button type="button" class="btn-a11y-policy">Accessibility Policy</button>
-      <a href="https://www.agrokorea.kr/kor/policy/privacy.html">Privacy Policy</a>
+      <nav aria-label="Legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <button type="button" class="btn-a11y-policy">Accessibility Policy</button>
+      </nav>
     </div>
   </div>
 </footer>

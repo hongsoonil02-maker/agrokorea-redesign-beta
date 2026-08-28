@@ -224,4 +224,36 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://www.agrokorea.net/en/products/sanitation.html" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.agrokorea.net/en/products/sanitation.html" />
   </url>
+  <url>
+    <loc>https://www.agrokorea.net/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.agrokorea.net/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.agrokorea.net/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.agrokorea.net/en/privacy.html" />
+  </url>
+  <url>
+    <loc>https://www.agrokorea.net/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.agrokorea.net/terms.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.agrokorea.net/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.agrokorea.net/en/terms.html" />
+  </url>
+  <url>
+    <loc>https://www.agrokorea.net/en/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.agrokorea.net/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.agrokorea.net/en/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.agrokorea.net/en/privacy.html" />
+  </url>
+  <url>
+    <loc>https://www.agrokorea.net/en/terms.html</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://www.agrokorea.net/terms.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.agrokorea.net/en/terms.html" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.agrokorea.net/en/terms.html" />
+  </url>
 </urlset>

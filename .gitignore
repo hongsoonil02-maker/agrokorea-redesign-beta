@@ -7,3 +7,6 @@ Desktop.ini
 tools/ecount/out/
 
 node_modules/
+
+# Image optimization backups (originals kept locally, not deployed)
+assets/img/_orig-backup/
