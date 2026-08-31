@@ -7,13 +7,13 @@ try {
   
   if (fs.existsSync(vaultPath)) {
     const now = new Date().toISOString().replace('T', ' ').substring(0, 19);
-    const logLine = `\n- [${now}] 장애인 접근 편의 제공(K-WAH 2.2 / WCAG 2.2 웹 접근성 도우미 위젯, 3단계 글자 확대, 초고대비 7:1 테마, 가독성 폰트, 링크 강조, 모션 정지, 포커스 강화, 웹접근성 정책 모달) 전체 28개 페이지 일괄 구축 및 GitHub 배포 완료\n`;
+    const logLine = `\n- [${now}] 모바일 히어로 비주얼 개선: 지루하고 세로로 길었던 단일 인물 사진을 청정 목장 및 건강한 송아지, 첨단 바이오 백신 케어 현장 고화질 16:9 비주얼로 전면 교체하고, 모바일 높이를 220px로 대폭 컴팩트화 및 라이브 하이라이트 뱃지 추가 완료\n`;
     
     fs.appendFileSync(logFile, logLine, 'utf8');
     console.log('Appended log to', logFile);
     
     execSync(`git -C "${vaultPath}" add .`, { stdio: 'inherit' });
-    execSync(`git -C "${vaultPath}" commit -m "auto-sync: a11y suite and policy update"`, { stdio: 'inherit' });
+    execSync(`git -C "${vaultPath}" commit -m "auto-sync: hero visual and mobile layout improvement"`, { stdio: 'inherit' });
     execSync(`git -C "${vaultPath}" push`, { stdio: 'inherit' });
     console.log('Synced agrolib to GitHub successfully.');
   } else {
