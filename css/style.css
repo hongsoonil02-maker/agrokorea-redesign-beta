@@ -1444,7 +1444,7 @@ html.a11y-focus-ring *:focus-visible {
   }
   .chat-fab {
     right: 16px;
-    bottom: 76px;
+    bottom: 20px;
     width: 46px;
     height: 46px;
   }
@@ -1454,7 +1454,7 @@ html.a11y-focus-ring *:focus-visible {
   }
   .chat-panel {
     right: 12px;
-    bottom: 130px;
+    bottom: 76px;
     width: auto;
   }
 }
