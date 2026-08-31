@@ -1444,3 +1444,26 @@ html.a11y-focus-ring *:focus-visible {
   }
 }
 
+/* Product detail modal */
+.prod-modal-backdrop{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .22s ease}
+.prod-modal-backdrop.open{display:flex;opacity:1}
+.prod-modal{background:var(--surface);border-radius:var(--radius);max-width:720px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:var(--shadow);transform:translateY(12px);transition:transform .22s ease}
+.prod-modal-backdrop.open .prod-modal{transform:translateY(0)}
+.prod-modal-close{position:sticky;top:12px;float:right;z-index:10;width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;margin:12px 12px 0 0;font-size:20px;color:var(--forest-deep);transition:background .15s,border-color .15s}
+.prod-modal-close:hover{background:var(--forest-deep);color:#fff;border-color:var(--forest-deep)}
+.prod-modal-img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f4f2ec;border-bottom:1px solid var(--line)}
+.prod-modal-body{padding:26px 28px 32px}
+.prod-modal-name{margin:0 0 6px;font-family:var(--sans);font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--forest-deep);letter-spacing:-.02em}
+.prod-modal-section{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+.prod-modal-section h4{margin:0 0 10px;font-size:13.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}
+.prod-modal-section p,.prod-modal-section li{margin:0;font-size:15px;line-height:1.75;color:var(--ink);word-break:keep-all}
+.prod-modal-section ul{margin:0;padding-left:18px}
+.prod-modal-section ul li{margin-top:4px}
+.prod-modal-buy{display:inline-flex;align-items:center;gap:8px;margin-top:24px;padding:13px 26px;border-radius:999px;background:var(--forest);color:#fff;font-weight:800;font-size:14.5px;text-decoration:none;transition:background .15s,transform .15s}
+.prod-modal-buy:hover{background:var(--forest-deep);transform:translateY(-2px)}
+@media (max-width:680px){
+  .prod-modal{max-height:94vh;max-width:calc(100vw - 32px);border-radius:20px}
+  .prod-modal-body{padding:20px 18px 28px}
+  .prod-modal-img{aspect-ratio:1/1}
+}
+
