@@ -897,6 +897,7 @@ body.chat-open .chat-panel{display:flex}
   .hero-visual{max-width:520px;margin-inline:auto;width:100%}
   .fc3{right:2%}
   .flagship-grid,.cat-grid,.news-grid{grid-template-columns:repeat(2,1fr)}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
   .about-grid,.rnd-grid,.split,.proof-grid,.cta-inner{grid-template-columns:1fr;gap:40px}
   .footer-grid{grid-template-columns:1fr 1fr}
   .glance{grid-template-columns:repeat(2,1fr)}
@@ -922,6 +923,7 @@ body.chat-open .chat-panel{display:flex}
   .cta-band{padding:52px 28px;border-radius:28px}
   .cta-band-wrap{padding:0 8px 80px}
   .flagship-grid,.cat-grid,.news-grid,.stat-grid{grid-template-columns:1fr}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
   .glance{grid-template-columns:1fr}
   .g-cell{border-right:0;border-bottom:1px solid var(--line)}
   .g-cell:last-child{border-bottom:0}
