@@ -15,8 +15,8 @@
   --teal:#15796b;
   --radius:22px;
   --shadow:0 20px 48px -16px rgba(18,64,46,.10), 0 2px 8px rgba(18,64,46,.04);
-  --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Malgun Gothic","맑은 고딕",sans-serif;
-  --serif:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Malgun Gothic","맑은 고딕",serif;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Malgun Gothic","맑은 고딕","Nanum Gothic","Apple SD Gothic Neo",sans-serif;
+  --serif:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR","Malgun Gothic","맑은 고딕","Nanum Gothic","Apple SD Gothic Neo",serif;
 }
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
