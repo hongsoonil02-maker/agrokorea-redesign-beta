@@ -294,8 +294,8 @@ body.chat-open .chat-panel{display:flex}
 .crumbs{display:flex;gap:8px;font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:26px}
 .crumbs a:hover{color:var(--forest)}
 .crumbs span[aria-current]{color:var(--forest)}
-.ph-eyebrow{display:inline-flex;font-size:12px;font-weight:900;letter-spacing:.2em;color:#fff;background:var(--accent);padding:7px 14px;border-radius:999px}
-.page-hero h1{margin-top:22px;font-family:var(--serif);font-size:clamp(44px,6.4vw,84px);line-height:1;letter-spacing:.005em;color:var(--accent);font-weight:700}
+.ph-eyebrow{display:inline-flex;font-size:12px;font-weight:900;letter-spacing:.2em;color:#000;background:#000;padding:7px 14px;border-radius:999px}
+.page-hero h1{margin-top:22px;font-family:var(--sans);font-size:clamp(44px,6.4vw,84px);line-height:1;letter-spacing:-.02em;color:var(--accent);font-weight:800}
 .page-hero .ph-kr{margin-top:16px;font-size:clamp(19px,2.2vw,25px);font-weight:800;color:var(--forest-deep)}
 .page-hero .ph-desc{margin-top:14px;max-width:62ch;color:var(--ink-soft);font-size:16.5px}
 .ph-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
