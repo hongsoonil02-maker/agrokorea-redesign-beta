@@ -133,7 +133,7 @@
       '<div class="prod-modal-body">' +
       '<h3 class="prod-modal-name"></h3>' +
       '<div class="prod-modal-content"></div>' +
-      '<a class="prod-modal-buy" href="https://www.coupang.com/vp/products/?q=" target="_blank" rel="noopener">구매하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>' +
+      '<a class="prod-modal-buy" href="/contact.html">구매 문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>' +
       "</div>" +
       "</div>";
     document.body.appendChild(modalWrap);
@@ -194,8 +194,7 @@
         }
       });
       contentEl.innerHTML = html;
-      buyEl.href =
-        "https://www.coupang.com/vp/products/?q=" + encodeURIComponent(p.name);
+      buyEl.href = "/contact.html";
     }
 
     function openModal(uid) {
