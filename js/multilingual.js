@@ -43,8 +43,45 @@
     document.body.appendChild(s);
   }
 
+  // Clear all googtrans cookies completely across all domains and paths
+  function clearGoogleTranslateCookie() {
+    const host = window.location.hostname;
+    const hostParts = host.split('.');
+    const domains = ['', host, '.' + host];
+    if (hostParts.length > 2) {
+      domains.push('.' + hostParts.slice(1).join('.'));
+    }
+    const paths = ['/', window.location.pathname, window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/'))];
+
+    domains.forEach(d => {
+      paths.forEach(p => {
+        if (!p) return;
+        document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=${p};` + (d ? ` domain=${d};` : '');
+      });
+    });
+  }
+
   // Trigger language change programmatically
   function changeLanguage(langCode) {
+    if (langCode === 'ko') {
+      clearGoogleTranslateCookie();
+      try {
+        const select = document.querySelector('.goog-te-combo');
+        if (select) {
+          select.value = '';
+          select.dispatchEvent(new Event('change'));
+        }
+      } catch (e) {}
+
+      if (window.location.pathname.startsWith('/en/')) {
+        window.location.href = window.location.pathname.replace(/^\/en\//, '/');
+      } else {
+        window.location.reload();
+      }
+      return;
+    }
+
+    // Set translation cookie for target language
     const host = window.location.hostname;
     const cookieVal = '/ko/' + langCode;
     document.cookie = `googtrans=${cookieVal}; path=/; domain=${host}`;
@@ -62,7 +99,7 @@
   // Detect current language from cookie or URL
   function getCurrentLang() {
     const match = document.cookie.match(/(?:^|;\s*)googtrans=\/([^\/]+)\/([^\/;]+)/);
-    if (match && match[2]) {
+    if (match && match[2] && match[2] !== 'ko') {
       return match[2];
     }
     if (window.location.pathname.startsWith('/en/')) {
@@ -95,7 +132,7 @@
           <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
         </svg>
         <span class="lang-flag">${currentObj.flag}</span>
-        <span class="lang-current-code">${currentObj.code.toUpperCase()}</span>
+        <span class="lang-current-code">${currentObj.code === 'ko' ? 'KO' : currentObj.code.toUpperCase()}</span>
         <svg class="lang-chevron" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <polyline points="6 9 12 15 18 9"></polyline>
         </svg>
@@ -142,18 +179,11 @@
         const code = this.getAttribute('data-code');
         wrapper.classList.remove('is-open');
         toggleBtn.setAttribute('aria-expanded', 'false');
-        
-        if (code === 'ko' && window.location.pathname.startsWith('/en/')) {
-          const cleanPath = window.location.pathname.replace(/^\/en\//, '/');
-          document.cookie = `googtrans=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;`;
-          window.location.href = cleanPath;
-          return;
-        }
-
         changeLanguage(code);
       });
     });
 
+    // Only load Google Script if current lang is not Korean or once user interacts
     loadGoogleScript();
   }
 
