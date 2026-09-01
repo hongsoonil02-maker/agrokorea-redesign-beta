@@ -344,9 +344,11 @@ body.chat-open .chat-panel{display:flex}
 .todo{border:1.5px dashed rgba(122,95,192,.55);border-radius:16px;padding:16px 20px;font-size:14px;color:var(--ink-soft);background:rgba(122,95,192,.06)}
 .todo b{color:var(--violet)}
 .other-products{display:flex;gap:12px;flex-wrap:wrap}
-.op-pill{display:inline-flex;align-items:center;gap:9px;padding:12px 22px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:800;font-size:14.5px;transition:border-color .2s,transform .2s}
-.op-pill:hover{border-color:var(--accent);transform:translateY(-3px)}
-.op-pill em{font-style:normal;font-family:var(--serif);color:var(--accent)}
+.op-pill{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);background:#ffffff;color:var(--ink);font-weight:700;font-size:14.5px;transition:border-color .2s,transform .2s,box-shadow .2s}
+.op-pill:hover{border-color:var(--forest);transform:translateY(-2px);box-shadow:0 6px 16px rgba(18,64,46,.1)}
+.op-pill em{font-style:normal;font-family:var(--sans);font-weight:800;color:var(--forest);background:var(--lime-soft);padding:3px 8px;border-radius:6px;font-size:13px}
+.proof .op-pill{background:#ffffff;color:#14231b;border:1px solid rgba(255,255,255,.4);box-shadow:0 4px 16px rgba(0,0,0,.15)}
+.proof .op-pill em{color:#0e3323;background:#d9f95d;font-weight:900}
 
 .hero-photo{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 48px -12px rgba(18,64,46,.18);background:var(--forest);max-height:460px}
 .hero-photo img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:center;transition:transform .4s ease}
