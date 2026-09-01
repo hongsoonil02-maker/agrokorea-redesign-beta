@@ -341,11 +341,10 @@ body.chat-open .chat-panel{display:flex}
 
 .hero-photo{position:relative;border-radius:28px;overflow:hidden;border:1px solid var(--line);box-shadow:0 20px 48px -12px rgba(18,64,46,.18);background:var(--forest);max-height:368px}
 .hero-slideshow{position:relative}
-.hero-slideshow img{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.hero-slideshow img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1.2s ease}
 .hero-slideshow img.active{opacity:1}
 .hero-slideshow::after{content:"";display:block;padding-top:56.25%}
-.hero-photo:hover img{transform:scale(1.03)}
-.hero-photo-badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(15,43,29,.82);backdrop-filter:blur(8px);border:1px solid rgba(201,236,80,.35);padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;color:#ffffff}
+.hero-photo-badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(15,43,29,.82);backdrop-filter:blur(8px);border:1px solid rgba(201,236,80,.35);padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;color:#ffffff;z-index:5}
 .hero-photo-badge .hpb-dot{width:7px;height:7px;border-radius:50%;background:#c9ec50;box-shadow:0 0 8px #c9ec50}
 .hero-mobile-badges{display:none}
 .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
@@ -917,7 +916,7 @@ body.chat-open .chat-panel{display:flex}
   .hero{padding:104px 0 44px}
   .hero-actions .btn{width:100%}
   .hero-photo{max-height:220px;border-radius:18px;box-shadow:0 8px 24px rgba(18,64,46,.12)}
-  .hero-photo img{height:220px;aspect-ratio:16/9;object-fit:cover}
+  .hero-slideshow img{height:220px}
   .hero-photo-badge{display:none}
   .hero-mobile-badges{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px;justify-content:center}
   .hero-mobile-badges span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:#ffffff;border:1px solid var(--line);color:var(--forest-deep);box-shadow:0 2px 6px rgba(0,0,0,.04)}
