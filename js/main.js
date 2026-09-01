@@ -230,17 +230,5 @@
         });
         card.style.cursor = "pointer";
       });
-  // Hero slideshow
-  (function () {
-    var slideshow = document.querySelector('.hero-slideshow');
-    if (!slideshow) return;
-    var slides = slideshow.querySelectorAll('img');
-    if (slides.length <= 1) return;
-    var current = 0;
-    setInterval(function () {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 4000);
   })();
 })();
