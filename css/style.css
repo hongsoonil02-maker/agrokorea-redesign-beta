@@ -64,6 +64,7 @@ section{scroll-margin-top:96px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#5c7a1e;background:var(--lime-soft);padding:7px 14px;border-radius:999px}
 .eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime-strong,#8fbf14)}
 .section{padding:70px 0}
+div.section-head{margin-bottom:36px}
 .flagship-wrap .section-head{max-width:100%}
 .flagship-wrap .section-head .lede{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .section-head h2{font-size:clamp(28px,3.4vw,44px);line-height:1.22;letter-spacing:-.02em;font-weight:800;margin-top:18px}
