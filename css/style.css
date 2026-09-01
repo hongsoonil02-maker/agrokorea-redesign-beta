@@ -345,8 +345,8 @@ body.chat-open .chat-panel{display:flex}
 .hero-photo-badge{position:absolute;left:16px;bottom:16px;display:inline-flex;align-items:center;gap:8px;background:rgba(15,43,29,.82);backdrop-filter:blur(8px);border:1px solid rgba(201,236,80,.35);padding:7px 14px;border-radius:999px;font-size:12px;font-weight:700;color:#ffffff}
 .hero-photo-badge .hpb-dot{width:7px;height:7px;border-radius:50%;background:#c9ec50;box-shadow:0 0 8px #c9ec50}
 .hero-mobile-badges{display:none}
-.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
-.about-photos img{width:100%;height:160px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
+.about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;align-self:stretch}
+.about-photos img{width:100%;height:100%;min-height:200px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
 .cat-card{padding:0}
 .cat-photo{width:100%;height:150px;object-fit:cover;border-bottom:1px solid var(--line)}
 .cat-body{display:flex;flex-direction:column;flex-grow:1;padding:24px 24px 26px}
