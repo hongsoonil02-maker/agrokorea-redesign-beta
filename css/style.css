@@ -210,18 +210,18 @@ body.menu-open .mobile-menu{transform:none;visibility:visible}
 .nc-arrow{margin-top:20px;font-size:13.5px;font-weight:800;color:var(--forest);display:inline-flex;gap:6px;align-items:center}
 .news-more{margin-top:40px;text-align:center}
 
-.cta-band-wrap{padding:0 16px 60px}
-.cta-band{position:relative;overflow:hidden;background:#ffffff;border:1.5px solid rgba(18,64,46,.12);border-radius:36px;padding:50px 48px;color:var(--ink);box-shadow:0 16px 48px -12px rgba(18,64,46,.08)}
-.cta-band::before{content:"";position:absolute;right:-100px;top:-100px;width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(201,236,80,.26),transparent 66%);pointer-events:none}
-.cta-band::after{content:"";position:absolute;left:-80px;bottom:-120px;width:280px;height:280px;border-radius:50%;border:1.5px dashed rgba(18,64,46,.12);pointer-events:none}
-.cta-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
-.cta-band h2{font-size:clamp(26px,3.2vw,40px);line-height:1.28;letter-spacing:-.02em;font-weight:800;color:var(--forest-deep)}
-.cta-band .cta-note{margin-top:14px;color:var(--ink-soft);font-size:15.5px}
-.cta-actions{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
-.cta-tel{font-family:var(--serif);font-size:38px;font-weight:700;color:var(--forest);letter-spacing:.01em}
-.cta-tel span{font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.16em;color:var(--ink-soft);display:block;margin-bottom:2px}
-.cta-band .btn-light-ghost{background:var(--forest);color:#ffffff;border-color:var(--forest);font-weight:800;padding:14px 28px;border-radius:999px}
-.cta-band .btn-light-ghost:hover{background:var(--forest-deep);border-color:var(--forest-deep);box-shadow:0 10px 28px rgba(18,64,46,.25);transform:translateY(-2px)}
+.cta-band-wrap{padding:0 16px 40px}
+.cta-band{position:relative;overflow:hidden;background:#ffffff;border:1.5px solid rgba(18,64,46,.12);border-radius:22px;padding:28px 36px;color:var(--ink);box-shadow:0 10px 30px -10px rgba(18,64,46,.06)}
+.cta-band::before{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(201,236,80,.2),transparent 66%);pointer-events:none}
+.cta-band::after{content:"";position:absolute;left:-60px;bottom:-100px;width:220px;height:220px;border-radius:50%;border:1.5px dashed rgba(18,64,46,.1);pointer-events:none}
+.cta-inner{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:28px;align-items:center}
+.cta-band h2{font-size:clamp(21px,2.4vw,30px);line-height:1.25;letter-spacing:-.02em;font-weight:800;color:var(--forest-deep)}
+.cta-band .cta-note{margin-top:8px;color:var(--ink-soft);font-size:13.5px}
+.cta-actions{display:flex;flex-direction:row;gap:18px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.cta-tel{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--forest);letter-spacing:.01em;display:inline-flex;align-items:baseline;gap:8px;line-height:1}
+.cta-tel span{font-family:var(--sans);font-size:11.5px;font-weight:800;letter-spacing:.14em;color:var(--ink-soft);display:inline-block;margin-bottom:0}
+.cta-band .btn-light-ghost{background:var(--forest);color:#ffffff;border-color:var(--forest);font-weight:800;padding:11px 22px;border-radius:999px;font-size:14px;white-space:nowrap}
+.cta-band .btn-light-ghost:hover{background:var(--forest-deep);border-color:var(--forest-deep);box-shadow:0 8px 20px rgba(18,64,46,.2);transform:translateY(-2px)}
 
 .site-footer{background:#e8e4da;color:var(--ink-soft);border-top:1px solid rgba(18,64,46,.12);padding:76px 0 34px}
 .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:48px}
@@ -929,8 +929,8 @@ body.chat-open .chat-panel{display:flex}
   .hero-mobile-badges span{font-size:11.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:#ffffff;border:1px solid var(--line);color:var(--forest-deep);box-shadow:0 2px 6px rgba(0,0,0,.04)}
   .flagship-wrap{margin:0;border-radius:0;padding:50px 0}
   .proof{padding:40px 26px;margin:0 8px;border-radius:28px}
-  .cta-band{padding:52px 28px;border-radius:28px}
-  .cta-band-wrap{padding:0 8px 80px}
+  .cta-band{padding:26px 20px;border-radius:20px}
+  .cta-band-wrap{padding:0 8px 36px}
   .flagship-grid,.cat-grid,.news-grid{grid-template-columns:1fr}
   .stat-grid{grid-template-columns:repeat(2,1fr)}
   .stat-grid{grid-template-columns:repeat(2,1fr)}
