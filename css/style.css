@@ -1491,6 +1491,201 @@ html.a11y-focus-ring *:focus-visible {
 .prod-modal-body{padding:26px 28px 32px}
 .prod-modal-name{margin:0 0 6px;font-family:var(--sans);font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--forest-deep);letter-spacing:-.02em}
 .prod-modal-section{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
+  overflow-y: auto;
+  font-size: 14.5px;
+  line-height: 1.75;
+}
+.a11y-policy-body h4 {
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+  margin: 18px 0 6px;
+}
+.a11y-policy-body h4:first-child {
+  margin-top: 0;
+}
+.a11y-policy-body p,
+.a11y-policy-body ul {
+  margin: 0 0 10px;
+  color: #374151;
+}
+.a11y-policy-body ul {
+  padding-left: 20px;
+}
+.a11y-policy-body li {
+  margin-bottom: 4px;
+}
+
+/* 4. 접근성 적용 전역 클래스 (Global Accessibility Modifiers) */
+
+/* 글자 크기 확대 */
+html.a11y-font-lg {
+  font-size: 115% !important;
+}
+html.a11y-font-xl {
+  font-size: 130% !important;
+}
+
+/* 초고대비 모드 (High Contrast 7:1) */
+html.a11y-contrast,
+html.a11y-contrast body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+html.a11y-contrast .site-header,
+html.a11y-contrast .site-footer,
+html.a11y-contrast .cta-band,
+html.a11y-contrast .flagship-card,
+html.a11y-contrast .cat-card,
+html.a11y-contrast .news-card,
+html.a11y-contrast .proof-card,
+html.a11y-contrast .press-paper,
+html.a11y-contrast .press-poster,
+html.a11y-contrast .rnd-item,
+html.a11y-contrast .mobile-menu,
+html.a11y-contrast .chat-panel {
+  background: #121212 !important;
+  border: 2px solid #ffff00 !important;
+  color: #ffffff !important;
+}
+html.a11y-contrast h1,
+html.a11y-contrast h2,
+html.a11y-contrast h3,
+html.a11y-contrast h4,
+html.a11y-contrast .masthead-title,
+html.a11y-contrast .press-main-title {
+  color: #ffff00 !important;
+}
+html.a11y-contrast p,
+html.a11y-contrast span,
+html.a11y-contrast li,
+html.a11y-contrast dt,
+html.a11y-contrast dd {
+  color: #ffffff !important;
+}
+html.a11y-contrast a {
+  color: #00ffff !important;
+  text-decoration: underline !important;
+}
+html.a11y-contrast .btn,
+html.a11y-contrast .btn-lime,
+html.a11y-contrast .btn-store-nav {
+  background: #000000 !important;
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+}
+html.a11y-contrast .eyebrow {
+  background: #ffff00 !important;
+  color: #000000 !important;
+  font-weight: 900 !important;
+}
+
+/* 흑백 모드 (Grayscale) */
+html.a11y-grayscale {
+  filter: grayscale(100%) contrast(115%) !important;
+}
+
+/* 가독성 폰트 (Legible Sans-Serif Font) */
+html.a11y-legible-font,
+html.a11y-legible-font * {
+  font-family: -apple-system, BlinkMacSystemFont, "Malgun Gothic", "맑은 고딕", "Nanum Gothic", sans-serif !important;
+  letter-spacing: 0.03em !important;
+  word-spacing: 0.05em !important;
+  line-height: 1.8 !important;
+}
+
+/* 링크 및 상호작용 요소 강조 (Highlight Links) */
+html.a11y-highlight-links a:not(.a11y-ignore),
+html.a11y-highlight-links button:not(.a11y-ignore) {
+  text-decoration: underline 3px #f59e0b !important;
+  text-underline-offset: 4px !important;
+  outline: 2px dashed #f59e0b !important;
+  outline-offset: 2px !important;
+}
+
+/* 애니메이션 및 모션 멈춤 (Stop Motion) */
+html.a11y-stop-motion *,
+html.a11y-stop-motion *::before,
+html.a11y-stop-motion *::after {
+  animation-duration: 0.0001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.0001ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* 키보드 포커스 링 강화 (High Visibility Focus) */
+html.a11y-focus-ring *:focus,
+html.a11y-focus-ring *:focus-visible {
+  outline: 4px solid #00e676 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.85) !important;
+}
+
+/* 풋터 웹접근성 정책 버튼 스타일 */
+.btn-a11y-policy {
+  background: none;
+  border: none;
+  color: var(--sub, #9ca3af);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+.btn-a11y-policy:hover,
+.btn-a11y-policy:focus-visible {
+  color: var(--forest, #0f2b1d);
+  outline: 2px solid #00e676;
+}
+
+@media (max-width: 680px) {
+  .a11y-widget-btn {
+    bottom: 20px;
+    left: 16px;
+    width: 46px;
+    height: 46px;
+  }
+  .a11y-widget-btn svg {
+    width: 24px;
+    height: 24px;
+  }
+  .a11y-panel {
+    bottom: 76px;
+    left: 16px;
+    width: calc(100vw - 32px);
+  }
+  .chat-fab {
+    right: 16px;
+    bottom: 20px;
+    width: 46px;
+    height: 46px;
+    z-index: 9999;
+  }
+  .chat-fab svg {
+    width: 22px;
+    height: 22px;
+  }
+  .chat-panel {
+    right: 12px;
+    bottom: 76px;
+    width: auto;
+    z-index: 141;
+  }
+}
+
+/* Product detail modal */
+.prod-modal-backdrop{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .22s ease}
+.prod-modal-backdrop.open{display:flex;opacity:1}
+.prod-modal{background:var(--surface);border-radius:var(--radius);max-width:720px;width:100%;max-height:88vh;overflow-y:auto;position:relative;box-shadow:var(--shadow);transform:translateY(12px);transition:transform .22s ease}
+.prod-modal-backdrop.open .prod-modal{transform:translateY(0)}
+.prod-modal-close{position:sticky;top:12px;float:right;z-index:10;width:40px;height:40px;border-radius:50%;background:var(--surface);border:1px solid var(--line);display:grid;place-items:center;cursor:pointer;margin:12px 12px 0 0;font-size:20px;color:var(--forest-deep);transition:background .15s,border-color .15s}
+.prod-modal-close:hover{background:var(--forest-deep);color:#fff;border-color:var(--forest-deep)}
+.prod-modal-img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f4f2ec;border-bottom:1px solid var(--line)}
+.prod-modal-body{padding:26px 28px 32px}
+.prod-modal-name{margin:0 0 6px;font-family:var(--sans);font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--forest-deep);letter-spacing:-.02em}
+.prod-modal-section{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
 .prod-modal-section h4{margin:0 0 10px;font-size:13.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--forest)}
 .prod-modal-section p,.prod-modal-section li{margin:0;font-size:15px;line-height:1.75;color:var(--ink);word-break:keep-all}
 .prod-modal-section ul{margin:0;padding-left:18px}
@@ -1615,6 +1810,25 @@ html.a11y-focus-ring *:focus-visible {
 .lang-option-item .l-flag {
   font-size: 15px;
   line-height: 1;
+}
+
+@media (max-width: 680px) {
+  .lang-selector-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    gap: 5px;
+  }
+  .lang-dropdown-menu {
+    position: fixed;
+    top: 72px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: 360px;
+    margin: 0 auto;
+    box-shadow: 0 20px 48px rgba(18,64,46,.25), 0 4px 16px rgba(0,0,0,.15);
+    z-index: 1000;
+  }
 }
 
 /* Hide intrusive Google Translate frame and banner */

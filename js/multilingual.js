@@ -77,16 +77,18 @@
     return 'ko';
   }
 
-  // Dynamically update Logo between "(주)한국아그로" and "AGROKOREA"
+  // Dynamically update Logo between "(주)한국아그로" and "Agrokorea"
   function updateBrandLogo(langCode) {
     const isKorean = (langCode === 'ko');
     const targetFile = isKorean ? 'logo.png' : 'logo-en.png';
-    const altText = isKorean ? '㈜한국아그로' : 'AGROKOREA';
+    const altText = isKorean ? '㈜한국아그로' : 'Agrokorea';
 
     document.querySelectorAll('.brand-logo').forEach(img => {
-      // Only swap main header/footer logo, preserve footer-logo.png if desired
-      if (img.src.includes('logo.png') || img.src.includes('logo-en.png')) {
-        const newSrc = img.src.replace(/logo(-en)?\.png/, targetFile);
+      if (img.src.includes('footer-logo')) {
+        return;
+      }
+      if (img.src.endsWith('/logo.png') || img.src.endsWith('/logo-en.png') || img.src.includes('logo.png') || img.src.includes('logo-en.png')) {
+        const newSrc = img.src.replace(/logo(-en)?\.png$/, targetFile);
         if (img.src !== newSrc) {
           img.src = newSrc;
         }
