@@ -306,9 +306,9 @@ body.chat-open .chat-panel{display:flex}
 .crumbs a:hover{color:var(--forest)}
 .crumbs span[aria-current]{color:var(--forest)}
 .ph-eyebrow{display:inline-flex;font-size:12px;font-weight:900;letter-spacing:.2em;color:#000;background:transparent;border:1px solid #000;padding:7px 14px;border-radius:999px}
-.page-hero h1{margin-top:22px;font-family:var(--sans);font-size:clamp(44px,6.4vw,84px);line-height:1;letter-spacing:-.02em;color:var(--accent);font-weight:800}
+.page-hero h1{margin-top:22px;font-family:var(--sans);font-size:clamp(32px,4.2vw,56px);line-height:1.2;letter-spacing:-.02em;color:var(--accent);font-weight:900;word-break:keep-all;text-wrap:pretty}
 .page-hero .ph-kr{margin-top:16px;font-size:clamp(19px,2.2vw,25px);font-weight:800;color:var(--forest-deep)}
-.page-hero .ph-desc{margin-top:14px;max-width:62ch;color:var(--ink-soft);font-size:16.5px}
+.page-hero .ph-desc{margin-top:14px;max-width:min(1080px,100%);color:var(--ink-soft);font-size:16.5px;line-height:1.7;word-break:keep-all;text-wrap:pretty}
 .ph-chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:24px}
 .ph-chips i{font-style:normal;font-size:12.5px;font-weight:800;padding:6px 13px;border-radius:999px;border:1.5px solid color-mix(in srgb,var(--accent) 45%,transparent);color:color-mix(in srgb,var(--accent) 80%,#000)}
 .p-rotagal{--accent:var(--terra)}
@@ -362,8 +362,9 @@ body.chat-open .chat-panel{display:flex}
 .hero-mobile-badges{display:none}
 .about-photos{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-self:stretch}
 .about-photos img{width:100%;height:100%;min-height:160px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
-.cat-card{padding:0}
-.cat-photo{width:100%;height:150px;object-fit:cover;border-bottom:1px solid var(--line)}
+.cat-card{padding:0;overflow:hidden;display:flex;flex-direction:column}
+.cat-photo{width:100%;height:190px;object-fit:contain;object-position:center;background:#ffffff;padding:16px 14px;border-bottom:1px solid var(--line);transition:transform .25s ease}
+.cat-card:hover .cat-photo{transform:scale(1.04)}
 .cat-body{display:flex;flex-direction:column;flex-grow:1;padding:24px 24px 26px}
 .cat-body h3{margin-top:14px}
 .news-thumb{width:100%;height:168px;object-fit:cover;border-radius:14px;border:1px solid var(--line);margin-bottom:18px}
@@ -371,7 +372,8 @@ body.chat-open .chat-panel{display:flex}
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .prod-card{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .2s,box-shadow .2s,border-color .2s}
 .prod-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(18,64,46,.35)}
-.prod-img{width:100%;aspect-ratio:4/3;object-fit:cover;background:#fff;border-bottom:1px solid var(--line)}
+.prod-img{width:100%;height:200px;object-fit:contain;object-position:center;background:#ffffff;padding:16px 14px;border-bottom:1px solid var(--line);transition:transform .25s ease}
+.prod-card:hover .prod-img{transform:scale(1.04)}
 .prod-body{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex-grow:1}
 .prod-name{font-size:16.5px;font-weight:800;color:var(--forest-deep)}
 .prod-link{margin-top:auto;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:800;color:var(--forest)}
