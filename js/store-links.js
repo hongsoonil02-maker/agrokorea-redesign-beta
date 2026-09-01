@@ -32,7 +32,7 @@
     {
       key: "monsmecta",
       name: "MONSMECTA 몬스멕타",
-      desc: { ko: "수의사 전용 장 점막 보호 솔루션 (온라인 판매 제외)", en: "Veterinarian-exclusive mucosal protection solution" },
+      desc: { ko: "동물병원 전용 장 점막 보호 솔루션 (동물병원 확인 후 공급)", en: "Veterinary clinic exclusive mucosal protection solution (Verification required)" },
       accent: "#2e8f81",
       naver: "",
       coupang: "",
@@ -94,9 +94,12 @@
     var cards = "";
     STORES.forEach(function (p) {
       var links = buyButtons(p);
-      var siteLink = '<a class="buy-btn" target="_blank" rel="noopener" href="' + esc(p.site) + '">' +
-        '<i class="dot" style="background:' + esc(p.accent) + '"></i>' +
-        (lang === "ko" ? "브랜드 공식 사이트" : "Brand official site") + "</a>";
+      var siteLink = p.vetOnly
+        ? '<span class="buy-btn" style="cursor:default;opacity:0.85;background:#eeebe4;border-color:rgba(18,64,46,.15);color:#5c7068"><i class="dot" style="background:#5c7068"></i>' +
+          (lang === "ko" ? "동물병원 전용 (인증 필요)" : "Clinic only (Verification req.)") + "</span>"
+        : '<a class="buy-btn" target="_blank" rel="noopener" href="' + esc(p.site) + '">' +
+          '<i class="dot" style="background:' + esc(p.accent) + '"></i>' +
+          (lang === "ko" ? "브랜드 공식 사이트" : "Brand official site") + "</a>";
       cards +=
         '<article class="store-card">' +
         '<span class="sc-brand"><i style="background:' + esc(p.accent) + '"></i>AgroKorea Official</span>' +

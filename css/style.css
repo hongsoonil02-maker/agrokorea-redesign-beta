@@ -173,6 +173,11 @@ body.menu-open .mobile-menu{transform:none;visibility:visible}
 .c-vetacol{--card:#c2830f}
 .c-parvogel{--card:#6949b3}
 .c-monsmecta{--card:#15796b}
+.product-card.is-locked{cursor:default;user-select:none;opacity:.92}
+.product-card.is-locked:hover{transform:none;box-shadow:0 4px 20px rgba(18,64,46,.04);border-color:rgba(18,64,46,.12)}
+.product-card.is-locked .pc-name{color:var(--ink)!important}
+.product-card.is-locked .pc-lock{background:rgba(18,64,46,.06);transform:none!important}
+.product-card.is-locked .pc-lock svg{stroke:var(--forest)!important}
 
 .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .cat-card{position:relative;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px 26px;transition:transform .2s,box-shadow .2s,border-color .2s}
