@@ -134,11 +134,11 @@ body.menu-open .mobile-menu{transform:none;visibility:visible}
 .partner-name{font-family:var(--serif);font-size:27px;font-weight:600;letter-spacing:.03em;color:rgba(19,34,26,.5);white-space:nowrap}
 @keyframes marquee{to{transform:translateX(calc(-50% - 36px))}}
 
-.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:stretch}
-.about-copy{display:flex;flex-direction:column}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:stretch}
+.about-copy{display:flex;flex-direction:column;justify-content:space-between}
 .about-copy p:last-of-type{margin-bottom:auto}
 .about-copy .btn{margin-top:36px}
-.about-right{display:flex;flex-direction:column;gap:24px}
+.about-right{display:flex;flex-direction:column;gap:24px;justify-content:space-between}
 .about-photos{display:flex;gap:14px}
 .about-photos img{width:50%;height:220px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
 .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
