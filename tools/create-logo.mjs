@@ -1,45 +1,36 @@
 import sharp from 'sharp';
 import fs from 'fs';
 
-async function makeLogo() {
-  if (!fs.existsSync('assets/img/logo-kr-backup.png')) {
-    fs.copyFileSync('assets/img/logo.png', 'assets/img/logo-kr-backup.png');
+async function makeLogos() {
+  // 1. Restore Korean logo to assets/img/logo.png
+  if (fs.existsSync('assets/img/logo-kr-backup.png')) {
+    fs.copyFileSync('assets/img/logo-kr-backup.png', 'assets/img/logo.png');
+    console.log('Restored Korean logo.png from backup');
   }
 
-  // 1. Resize the leaf symbol
+  // 2. Generate English / Foreign Logo: [Leaf Logo] AGROKOREA
   const symbol = await sharp('assets/img/footer-logo.png')
     .resize({ height: 136 })
     .toBuffer();
 
   const symMeta = await sharp(symbol).metadata();
 
-  // Width 880 to accommodate "Agrokorea Co.,Ltd." comfortably
-  const width = 940;
+  const width = 860;
   const height = 152;
   const textX = symMeta.width + 24;
 
   const svgText = Buffer.from(`
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <style>
-        .logo-main {
+        .logo-text {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-weight: 800;
-          font-size: 78px;
+          font-weight: 900;
+          font-size: 88px;
           fill: #14231b;
           letter-spacing: -1.5px;
         }
-        .logo-sub {
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-          font-weight: 700;
-          font-size: 50px;
-          fill: #3b5043;
-          letter-spacing: -0.5px;
-        }
       </style>
-      <text x="${textX}" y="104">
-        <tspan class="logo-main">Agrokorea </tspan>
-        <tspan class="logo-sub">Co.,Ltd.</tspan>
-      </text>
+      <text x="${textX}" y="108" class="logo-text">AGROKOREA</text>
     </svg>
   `);
 
@@ -56,9 +47,9 @@ async function makeLogo() {
     { input: svgText, top: 0, left: 0 }
   ])
   .png()
-  .toFile('assets/img/logo.png');
+  .toFile('assets/img/logo-en.png');
 
-  console.log('Successfully generated Agrokorea Co.,Ltd. logo.png');
+  console.log('Successfully generated assets/img/logo-en.png with AGROKOREA');
 }
 
-makeLogo();
+makeLogos();

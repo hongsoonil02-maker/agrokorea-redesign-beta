@@ -2,6 +2,10 @@
  * AgroKorea Multilingual Google Translate Controller
  * Supports 15+ partner countries: Korea, USA, China, Japan, Germany, France,
  * Slovakia, Mexico/Spain, Thailand, Philippines, India, Vietnam, etc.
+ *
+ * Dynamic Branding:
+ * - Korean ('ko'): Shows [Logo] (주)한국아그로
+ * - Foreign Languages: Shows [Logo] AGROKOREA
  */
 
 (function () {
@@ -61,6 +65,36 @@
     });
   }
 
+  // Detect current language from cookie or URL
+  function getCurrentLang() {
+    const match = document.cookie.match(/(?:^|;\s*)googtrans=\/([^\/]+)\/([^\/;]+)/);
+    if (match && match[2] && match[2] !== 'ko') {
+      return match[2];
+    }
+    if (window.location.pathname.startsWith('/en/')) {
+      return 'en';
+    }
+    return 'ko';
+  }
+
+  // Dynamically update Logo between "(주)한국아그로" and "AGROKOREA"
+  function updateBrandLogo(langCode) {
+    const isKorean = (langCode === 'ko');
+    const targetFile = isKorean ? 'logo.png' : 'logo-en.png';
+    const altText = isKorean ? '㈜한국아그로' : 'AGROKOREA';
+
+    document.querySelectorAll('.brand-logo').forEach(img => {
+      // Only swap main header/footer logo, preserve footer-logo.png if desired
+      if (img.src.includes('logo.png') || img.src.includes('logo-en.png')) {
+        const newSrc = img.src.replace(/logo(-en)?\.png/, targetFile);
+        if (img.src !== newSrc) {
+          img.src = newSrc;
+        }
+        img.alt = altText;
+      }
+    });
+  }
+
   // Trigger language change programmatically
   function changeLanguage(langCode) {
     if (langCode === 'ko') {
@@ -73,6 +107,8 @@
         }
       } catch (e) {}
 
+      updateBrandLogo('ko');
+
       if (window.location.pathname.startsWith('/en/')) {
         window.location.href = window.location.pathname.replace(/^\/en\//, '/');
       } else {
@@ -80,6 +116,8 @@
       }
       return;
     }
+
+    updateBrandLogo(langCode);
 
     // Set translation cookie for target language
     const host = window.location.hostname;
@@ -96,18 +134,6 @@
     }
   }
 
-  // Detect current language from cookie or URL
-  function getCurrentLang() {
-    const match = document.cookie.match(/(?:^|;\s*)googtrans=\/([^\/]+)\/([^\/;]+)/);
-    if (match && match[2] && match[2] !== 'ko') {
-      return match[2];
-    }
-    if (window.location.pathname.startsWith('/en/')) {
-      return 'en';
-    }
-    return 'ko';
-  }
-
   // Build custom language selector UI
   function initSelector() {
     if (!document.getElementById('google_translate_element')) {
@@ -120,6 +146,11 @@
     const currentCode = getCurrentLang();
     const currentObj = LANGUAGES.find(l => l.code === currentCode) || LANGUAGES[0];
 
+    // Update brand logo to match initial language
+    updateBrandLogo(currentCode);
+
+    // Find and replace existing .nav-lang container or single toggle link cleanly
+    const existingNavLang = document.querySelector('.nav-lang');
     const existingLangBtn = document.querySelector('.lang-btn, .lang-toggle, a[href*="en/index.html"], a[href*="../index.html"]');
 
     const wrapper = document.createElement('div');
@@ -152,10 +183,12 @@
       </div>
     `;
 
-    if (existingLangBtn && existingLangBtn.parentElement) {
+    if (existingNavLang) {
+      existingNavLang.replaceWith(wrapper);
+    } else if (existingLangBtn && existingLangBtn.parentElement) {
       existingLangBtn.parentElement.replaceChild(wrapper, existingLangBtn);
     } else {
-      const headerNav = document.querySelector('.site-nav, .header-inner, header');
+      const headerNav = document.querySelector('.site-nav, .nav-side, .header-inner, header');
       if (headerNav) headerNav.appendChild(wrapper);
     }
 
@@ -183,7 +216,6 @@
       });
     });
 
-    // Only load Google Script if current lang is not Korean or once user interacts
     loadGoogleScript();
   }
 
