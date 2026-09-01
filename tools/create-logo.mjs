@@ -13,22 +13,33 @@ async function makeLogo() {
 
   const symMeta = await sharp(symbol).metadata();
 
-  const width = 760;
+  // Width 880 to accommodate "Agrokorea Co.,Ltd." comfortably
+  const width = 940;
   const height = 152;
   const textX = symMeta.width + 24;
 
   const svgText = Buffer.from(`
     <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
       <style>
-        .logo-text {
+        .logo-main {
           font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
           font-weight: 800;
-          font-size: 84px;
+          font-size: 78px;
           fill: #14231b;
-          letter-spacing: -2px;
+          letter-spacing: -1.5px;
+        }
+        .logo-sub {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          font-weight: 700;
+          font-size: 50px;
+          fill: #3b5043;
+          letter-spacing: -0.5px;
         }
       </style>
-      <text x="${textX}" y="106" class="logo-text">Agrokorea</text>
+      <text x="${textX}" y="104">
+        <tspan class="logo-main">Agrokorea </tspan>
+        <tspan class="logo-sub">Co.,Ltd.</tspan>
+      </text>
     </svg>
   `);
 
@@ -47,7 +58,7 @@ async function makeLogo() {
   .png()
   .toFile('assets/img/logo.png');
 
-  console.log('Successfully generated new Agrokorea logo.png');
+  console.log('Successfully generated Agrokorea Co.,Ltd. logo.png');
 }
 
 makeLogo();
