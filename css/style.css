@@ -5,7 +5,7 @@
   --ink-soft:#4a5c51;
   --line:rgba(18,64,46,.10);
   --forest:#12402e;
-  --forest-deep:#0b2319;
+  --forest-deep:#123a2b;
   --lime:#c9ec50;
   --lime-soft:rgba(201,236,80,.28);
   --cream:#ebe7de;
@@ -329,7 +329,7 @@ body.chat-open .chat-panel{display:flex}
 .feature-row b{display:block;font-size:16px}
 .feature-row p{margin-top:4px;font-size:14px;color:var(--ink-soft)}
 
-.proof{background:var(--forest-deep);color:var(--cream);border-radius:34px;padding:44px;margin:0 16px}
+.proof{background:linear-gradient(145deg, #164d38 0%, #1e5a43 100%);color:#ffffff;border-radius:28px;padding:44px;margin:0 16px;border:1px solid rgba(201,236,80,.14);box-shadow:0 12px 36px -10px rgba(18,64,46,.15)}
 .proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:44px;margin-top:44px}
 .proof-card{background:rgba(242,239,227,.07);border:1px solid rgba(242,239,227,.14);border-radius:22px;padding:30px}
 .proof-card .big{font-family:var(--serif);font-size:clamp(34px,4vw,52px);font-weight:700;color:var(--lime);line-height:1.05}
