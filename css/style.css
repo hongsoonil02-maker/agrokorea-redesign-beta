@@ -140,7 +140,7 @@ body.menu-open .mobile-menu{transform:none;visibility:visible}
 .about-copy .btn{margin-top:36px}
 .about-photos{display:flex;gap:14px}
 .about-photos img{width:50%;height:220px;object-fit:cover;border-radius:16px;border:1px solid var(--line)}
-.stat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .stat-card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
 .stat-card b{display:flex;align-items:baseline;font-family:var(--serif);font-size:42px;font-weight:700;color:var(--forest);line-height:1}
 .stat-card b i{font-style:normal;font-size:22px;margin-left:2px}
@@ -924,7 +924,8 @@ body.chat-open .chat-panel{display:flex}
   .proof{padding:40px 26px;margin:0 8px;border-radius:28px}
   .cta-band{padding:52px 28px;border-radius:28px}
   .cta-band-wrap{padding:0 8px 80px}
-  .flagship-grid,.cat-grid,.news-grid,.stat-grid{grid-template-columns:1fr}
+  .flagship-grid,.cat-grid,.news-grid{grid-template-columns:1fr}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
   .prod-grid{grid-template-columns:repeat(2,1fr)}
   .glance{grid-template-columns:1fr}
   .g-cell{border-right:0;border-bottom:1px solid var(--line)}
