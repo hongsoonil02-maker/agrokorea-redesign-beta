@@ -134,6 +134,10 @@
     } else {
       window.location.reload();
     }
+
+    try {
+      window.dispatchEvent(new CustomEvent('agroLanguageChanged', { detail: { lang: langCode } }));
+    } catch (e) {}
   }
 
   // Build custom language selector UI

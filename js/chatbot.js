@@ -5,7 +5,17 @@
   var TEL_INTL = "+82-2-6949-5708";
   var EMAIL = "name_hyosun@naver.com";
 
-  var lang = (document.documentElement.lang || "ko").toLowerCase().indexOf("en") === 0 ? "en" : "ko";
+  function detectCurrentLang() {
+    var match = document.cookie.match(/(?:^|;\s*)googtrans=\/([^\/]+)\/([^\/;]+)/);
+    if (match && match[2]) {
+      var code = match[2].toLowerCase();
+      if (code.indexOf("en") === 0) return "en";
+      if (code !== "ko") return "en"; // Global non-korean fallback to EN for high quality response
+    }
+    return (document.documentElement.lang || "ko").toLowerCase().indexOf("en") === 0 ? "en" : "ko";
+  }
+
+  var lang = detectCurrentLang();
   var inProducts = /products\/[a-z]+\.html$/i.test(location.pathname);
 
   function pl(name) { return (inProducts ? "" : "products/") + name + ".html"; }
@@ -14,24 +24,24 @@
     ko: {
       title: "AGRO 어시스턴트",
       status: "온라인",
-      greeting: "안녕하세요! <b>㈜한국아그로</b> 상담 챗봇입니다.<br/>제품·도입·구매 문의를 입력해 주세요.",
+      greeting: "안녕하세요! <b>㈜한국아그로</b> 전문 상담 챗봇입니다.<br/>로타갈·베타콜·파보겔·몬스멕타 및 수의사 병원 공급 문의를 입력해 주세요.",
       placeholder: "궁금한 내용을 입력하세요…",
       send: "보내기",
       openLabel: "상담 챗봇 열기",
-      chips: ["로타갈이 뭐예요?", "구매는 어디서 하나요?", "접종 시기가 궁금해요", "연락처 알려주세요"],
-      fallback: "죄송해요, 그 부분은 제가 바로 답변드리기 어렵네요. <a href=\"tel:" + TEL + "\">" + TEL + "</a> 또는 <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>으로 문의주시면 빠르게 안내해 드립니다.",
-      disclaimer: "동물용 의약품의 사용은 반드시 수의사의 지도에 따라 주세요."
+      chips: ["몬스멕타 성분 및 병원 공급", "로타갈 백신 특징", "베타콜 초유 급여법", "공급 및 단가 문의"],
+      fallback: "죄송해요, 그 부분은 제가 바로 답변드리기 어렵네요. <a href=\"tel:" + TEL + "\">" + TEL + "</a> (해외: <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a>) 또는 <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>으로 문의주시면 즉시 전문 상담사가 안내해 드립니다.",
+      disclaimer: "동물용 의약품 및 처방 보조제의 사용은 반드시 면허를 갖춘 수의사의 지도에 따라 주세요."
     },
     en: {
       title: "AGRO Assistant",
       status: "Online",
-      greeting: "Hello! This is the <b>Korea Agro</b> assistant.<br/>Ask me about our products, purchasing or partnerships.",
-      placeholder: "Type your question…",
+      greeting: "Hello! Welcome to <b>Korea Agro Co., Ltd.</b><br/>Inquire about our veterinary portfolio: MONSMECTA, ROTAGAL, VETACOL, PARVOGEL or hospital supply terms.",
+      placeholder: "Type your inquiry…",
       send: "Send",
       openLabel: "Open chat assistant",
-      chips: ["What is ROTAGAL?", "Where can I buy?", "Vaccination timing", "Contact info"],
-      fallback: "Sorry, I can't answer that right away. Please contact us at <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a> or <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>.",
-      disclaimer: "Veterinary medicines must be used under veterinary guidance."
+      chips: ["MONSMECTA Specifications", "ROTAGAL Vaccine", "VETACOL Colostrum", "Hospital Supply & Wholesale"],
+      fallback: "Sorry, I can't answer that directly. Please contact our clinical desk at <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a> or <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> for verified wholesale and registration dossiers.",
+      disclaimer: "Veterinary medicines and prescription supplements must be administered under licensed veterinary guidance."
     }
   };
 
@@ -54,14 +64,14 @@
       en: "<b>PARVOGEL</b> supports anti-diarrheal care for newborns of all species (calves, piglets, lambs, foals) with ultra-fine nano montmorillonite plus Bacillus subtilis.<br/><br/>More: " + a(pl("parvogel"), "PARVOGEL page")
     },
     {
-      kw: ["몬스멕타", "monsmecta"],
-      ko: "<b>MONSMECTA(몬스멕타)</b>는 수의사 전용으로 공급되는 장 점막 보호 솔루션입니다. 온라인 판매가 아닌 전문 채널 공급 제품으로, 공급 조건은 문의를 통해 안내해 드립니다.<br/><br/>자세히: " + a(pl("monsmecta"), "MONSMECTA 제품 페이지"),
-      en: "<b>MONSMECTA</b> is a veterinarian-exclusive intestinal mucosal protection solution supplied through professional channels only. Contact us for supply details.<br/><br/>More: " + a(pl("monsmecta"), "MONSMECTA page")
+      kw: ["몬스멕타", "monsmecta", "스멕타", "smecta", "장점막", "처방", "동물병원"],
+      ko: "<b>MONSMECTA(몬스멕타)</b>는 동물병원 전용으로 공급되는 <b>장 점막 보호 및 장독소 흡착 솔루션(100ml)</b>입니다.<br/>• <b>5대 복합체</b>: 고순도 초미세 나노 몬모릴로나이트, 특허 균주 <i>Bacillus subtilis</i> MORI(DNJ 함유, 특허 201180042602.8), 비타민A, 전해질염(Sodium acetate/propionate), 포도당.<br/>• <b>공급 방식</b>: 일반 쇼핑몰 판매가 아닌 수의사 면허 확인 후 병원 직발송 방식으로 공급됩니다.<br/><br/>자세히: " + a(pl("monsmecta"), "MONSMECTA 제품 상세 보기") + " · " + a("https://monsmecta.kr", "monsmecta.kr 공식 사이트"),
+      en: "<b>MONSMECTA</b> is a premium veterinarian-exclusive <b>intestinal mucosal protection & enterotoxin adsorption solution (100ml)</b>.<br/>• <b>5-Complex Formula</b>: Ultra-fine nano montmorillonite, patented <i>Bacillus subtilis</i> MORI (Patent No. 201180042602.8 with natural DNJ), Vitamin A, electrolytes (sodium acetate/propionate), and dextrose.<br/>• <b>Distribution</b>: Distributed exclusively to verified veterinary clinics and hospitals.<br/><br/>More: " + a(pl("monsmecta"), "MONSMECTA Details") + " · " + a("https://monsmecta.kr", "monsmecta.kr Official Site")
     },
     {
       kw: ["구매", "구입", "주문", "스마트스토어", "네이버", "쿠팡", "가격", "얼마", "buy", "order", "price", "coupang", "naver", "store", "shop"],
-      ko: "베타콜과 파보겔은 <b>네이버 스마트스토어·쿠팡 공식 입점 몰</b> 및 각 브랜드 사이트(vetacol.kr · parvogel.kr)에서 구매하실 수 있습니다. 백신(로타갈)과 몬스멕타는 전화 문의를 통해 도입 상담을 진행해 주세요.<br/><br/>" + a("#store", "공식 온라인 스토어 보기") + " · " + a("tel:" + TEL, "도입 문의 " + TEL),
-      en: "VETACOL and PARVOGEL are available via our official <b>Naver Smart Store and Coupang storefronts</b> and brand sites (vetacol.kr · parvogel.kr). For the ROTAGAL vaccine and MONSMECTA, please call for supply consultation.<br/><br/>" + a("#store", "Official online stores") + " · " + a("tel:" + TEL_INTL, "Call " + TEL_INTL)
+      ko: "베타콜과 파보겔은 <b>네이버 스마트스토어·쿠팡 공식 입점 몰</b> 및 브랜드 사이트에서 구매 가능합니다.<br/>※ <b>몬스멕타</b>와 <b>로타갈 백신</b>은 동물병원 및 수의사 전용 품목이므로 전화(<a href=\"tel:" + TEL + "\">" + TEL + "</a>) 또는 이메일 상담을 통해 병원 공급 단가를 안내해 드립니다.<br/><br/>" + a("#store", "온라인 스토어 바로가기") + " · " + a("tel:" + TEL, "도입 문의 " + TEL),
+      en: "VETACOL and PARVOGEL are available via official <b>Naver Smart Store & Coupang storefronts</b>.<br/>※ <b>MONSMECTA</b> and <b>ROTAGAL vaccine</b> are strictly veterinarian-exclusive. Contact our clinical desk at <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a> or <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> for wholesale pricing.<br/><br/>" + a("#store", "Online Storefronts") + " · " + a("tel:" + TEL_INTL, "Call " + TEL_INTL)
     },
     {
       kw: ["재고", "유통기한", "납기", "배송", "delivery", "shipping", "stock", "inventory"],
@@ -196,15 +206,40 @@
     }, 420);
   }
 
+  function refreshChatText() {
+    lang = detectCurrentLang();
+    t = TEXT[lang] || TEXT.ko;
+    var titleEl = panelEl.querySelector(".chat-head b");
+    var subEl = panelEl.querySelector(".chat-head span:not(.chat-status)");
+    var statusEl = panelEl.querySelector(".chat-status");
+    if (titleEl) titleEl.textContent = t.title;
+    if (subEl) subEl.textContent = (lang === "ko" ? "㈜한국아그로" : "Korea Agro Co., Ltd.");
+    if (statusEl) statusEl.textContent = t.status;
+    if (input) {
+      input.placeholder = t.placeholder;
+      input.setAttribute("aria-label", t.placeholder);
+    }
+  }
+
   function setOpen(openState) {
     document.body.classList.toggle("chat-open", openState);
     fab.setAttribute("aria-expanded", openState ? "true" : "false");
+    refreshChatText();
     if (openState && !bodyEl.childElementCount) {
       addMsg(t.greeting, "bot");
       addChips();
     }
     if (openState) { input.focus(); }
   }
+
+  window.addEventListener("agroLanguageChanged", function () {
+    refreshChatText();
+    if (document.body.classList.contains("chat-open") && bodyEl.childElementCount <= 2) {
+      bodyEl.innerHTML = "";
+      addMsg(t.greeting, "bot");
+      addChips();
+    }
+  });
 
   fab.addEventListener("click", function () {
     setOpen(!document.body.classList.contains("chat-open"));
@@ -222,5 +257,5 @@
     }
   });
 
-  window.AGRO_CHAT = { ask: ask, localReply: localReply };
+  window.AGRO_CHAT = { ask: ask, localReply: localReply, refreshChatText: refreshChatText };
 })();
