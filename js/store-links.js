@@ -32,12 +32,12 @@
     {
       key: "monsmecta",
       name: "MONSMECTA 몬스멕타",
-      desc: { ko: "동물병원 전용 장 점막 보호 솔루션 (동물병원 확인 후 공급)", en: "Veterinary clinic exclusive mucosal protection solution (Verification required)" },
+      desc: { ko: "반려동물·소동물·가축 장 점막 보호 및 설사 케어 솔루션", en: "Intestinal mucosal protection & digestive care solution for pets and livestock" },
       accent: "#2e8f81",
       naver: "",
       coupang: "",
       site: "https://monsmecta.kr",
-      vetOnly: true
+      vetOnly: false
     }
   ];
 
@@ -72,6 +72,11 @@
       html += '<a class="buy-btn" target="_blank" rel="noopener" href="' + esc(url) + '">' +
         '<i class="dot" style="background:' + MALLS[mall].dot + '"></i>' + esc(MALLS[mall][lang] || mall) + "</a>";
     });
+    if (!html && product.site && !product.vetOnly) {
+      html += '<a class="buy-btn" target="_blank" rel="noopener" href="' + esc(product.site) + '">' +
+        '<i class="dot" style="background:' + esc(product.accent || '#2e8f81') + '"></i>' +
+        esc(lang === "ko" ? "공식 브랜드몰" : "Official Brand Store") + "</a>";
+    }
     return html;
   }
 
@@ -99,7 +104,7 @@
           (lang === "ko" ? "동물병원 전용 (인증 필요)" : "Clinic only (Verification req.)") + "</span>"
         : '<a class="buy-btn" target="_blank" rel="noopener" href="' + esc(p.site) + '">' +
           '<i class="dot" style="background:' + esc(p.accent) + '"></i>' +
-          (lang === "ko" ? "브랜드 공식 사이트" : "Brand official site") + "</a>";
+          (lang === "ko" ? "공식 브랜드몰" : "Official Brand Store") + "</a>";
       cards +=
         '<article class="store-card">' +
         '<span class="sc-brand"><i style="background:' + esc(p.accent) + '"></i>AgroKorea Official</span>' +

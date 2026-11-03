@@ -24,22 +24,22 @@
     ko: {
       title: "AGRO 어시스턴트",
       status: "온라인",
-      greeting: "안녕하세요! <b>㈜한국아그로</b> 전문 상담 챗봇입니다.<br/>로타갈·베타콜·파보겔·몬스멕타 및 수의사 병원 공급 문의를 입력해 주세요.",
+      greeting: "안녕하세요! <b>㈜한국아그로</b> 전문 상담 챗봇입니다.<br/>로타갈·베타콜·파보겔·몬스멕타 제품 및 공급 문의를 입력해 주세요.",
       placeholder: "궁금한 내용을 입력하세요…",
       send: "보내기",
       openLabel: "상담 챗봇 열기",
-      chips: ["몬스멕타 성분 및 병원 공급", "로타갈 백신 특징", "베타콜 초유 급여법", "공급 및 단가 문의"],
+      chips: ["몬스멕타 성분 및 구매 안내", "로타갈 백신 특징", "베타콜 초유 급여법", "공급 및 단가 문의"],
       fallback: "죄송해요, 그 부분은 제가 바로 답변드리기 어렵네요. <a href=\"tel:" + TEL + "\">" + TEL + "</a> (해외: <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a>) 또는 <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a>으로 문의주시면 즉시 전문 상담사가 안내해 드립니다.",
       disclaimer: "동물용 의약품 및 처방 보조제의 사용은 반드시 면허를 갖춘 수의사의 지도에 따라 주세요."
     },
     en: {
       title: "AGRO Assistant",
       status: "Online",
-      greeting: "Hello! Welcome to <b>Korea Agro Co., Ltd.</b><br/>Inquire about our veterinary portfolio: MONSMECTA, ROTAGAL, VETACOL, PARVOGEL or hospital supply terms.",
+      greeting: "Hello! Welcome to <b>Korea Agro Co., Ltd.</b><br/>Inquire about our core portfolio: MONSMECTA, ROTAGAL, VETACOL, PARVOGEL or supply inquiries.",
       placeholder: "Type your inquiry…",
       send: "Send",
       openLabel: "Open chat assistant",
-      chips: ["MONSMECTA Specifications", "ROTAGAL Vaccine", "VETACOL Colostrum", "Hospital Supply & Wholesale"],
+      chips: ["MONSMECTA Specifications", "ROTAGAL Vaccine", "VETACOL Colostrum", "Supply & Wholesale"],
       fallback: "Sorry, I can't answer that directly. Please contact our clinical desk at <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a> or <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> for verified wholesale and registration dossiers.",
       disclaimer: "Veterinary medicines and prescription supplements must be administered under licensed veterinary guidance."
     }
@@ -65,13 +65,13 @@
     },
     {
       kw: ["몬스멕타", "monsmecta", "스멕타", "smecta", "장점막", "처방", "동물병원"],
-      ko: "<b>MONSMECTA(몬스멕타)</b>는 동물병원 전용으로 공급되는 <b>장 점막 보호 및 장독소 흡착 솔루션(100ml)</b>입니다.<br/>• <b>5대 복합체</b>: 고순도 초미세 나노 몬모릴로나이트, 특허 균주 <i>Bacillus subtilis</i> MORI(DNJ 함유, 특허 201180042602.8), 비타민A, 전해질염(Sodium acetate/propionate), 포도당.<br/>• <b>공급 방식</b>: 일반 쇼핑몰 판매가 아닌 수의사 면허 확인 후 병원 직발송 방식으로 공급됩니다.<br/><br/>자세히: " + a(pl("monsmecta"), "MONSMECTA 제품 상세 보기") + " · " + a("https://monsmecta.kr", "monsmecta.kr 공식 사이트"),
-      en: "<b>MONSMECTA</b> is a premium veterinarian-exclusive <b>intestinal mucosal protection & enterotoxin adsorption solution (100ml)</b>.<br/>• <b>5-Complex Formula</b>: Ultra-fine nano montmorillonite, patented <i>Bacillus subtilis</i> MORI (Patent No. 201180042602.8 with natural DNJ), Vitamin A, electrolytes (sodium acetate/propionate), and dextrose.<br/>• <b>Distribution</b>: Distributed exclusively to verified veterinary clinics and hospitals.<br/><br/>More: " + a(pl("monsmecta"), "MONSMECTA Details") + " · " + a("https://monsmecta.kr", "monsmecta.kr Official Site")
+      ko: "<b>MONSMECTA(몬스멕타)</b>는 반려동물·소동물·가축을 위한 <b>장 점막 보호 및 장독소 흡착 솔루션(100ml)</b>입니다.<br/>• <b>5대 복합체</b>: 고순도 초미세 나노 몬모릴로나이트, 특허 균주 <i>Bacillus subtilis</i> MORI(DNJ 함유, 특허 201180042602.8), 비타민A, 전해질염(Sodium acetate/propionate), 포도당.<br/>• <b>구매 안내</b>: 공식 브랜드 사이트(<b>monsmecta.kr</b>)에서 간편하게 주문하실 수 있으며, 대량 및 병원 공급 상담도 가능합니다.<br/><br/>자세히: " + a(pl("monsmecta"), "MONSMECTA 제품 상세 보기") + " · " + a("https://monsmecta.kr", "monsmecta.kr 공식 사이트"),
+      en: "<b>MONSMECTA</b> is an advanced <b>intestinal mucosal protection & enterotoxin adsorption solution (100ml)</b> for pets, exotic animals, and livestock.<br/>• <b>5-Complex Formula</b>: Ultra-fine nano montmorillonite, patented <i>Bacillus subtilis</i> MORI (Patent No. 201180042602.8 with natural DNJ), Vitamin A, electrolytes (sodium acetate/propionate), and dextrose.<br/>• <b>Availability</b>: Available for direct online ordering at <b>monsmecta.kr</b>, as well as clinic and wholesale supply.<br/><br/>More: " + a(pl("monsmecta"), "MONSMECTA Details") + " · " + a("https://monsmecta.kr", "monsmecta.kr Official Site")
     },
     {
       kw: ["구매", "구입", "주문", "스마트스토어", "네이버", "쿠팡", "가격", "얼마", "buy", "order", "price", "coupang", "naver", "store", "shop"],
-      ko: "베타콜과 파보겔은 <b>네이버 스마트스토어·쿠팡 공식 입점 몰</b> 및 브랜드 사이트에서 구매 가능합니다.<br/>※ <b>몬스멕타</b>와 <b>로타갈 백신</b>은 동물병원 및 수의사 전용 품목이므로 전화(<a href=\"tel:" + TEL + "\">" + TEL + "</a>) 또는 이메일 상담을 통해 병원 공급 단가를 안내해 드립니다.<br/><br/>" + a("#store", "온라인 스토어 바로가기") + " · " + a("tel:" + TEL, "도입 문의 " + TEL),
-      en: "VETACOL and PARVOGEL are available via official <b>Naver Smart Store & Coupang storefronts</b>.<br/>※ <b>MONSMECTA</b> and <b>ROTAGAL vaccine</b> are strictly veterinarian-exclusive. Contact our clinical desk at <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a> or <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> for wholesale pricing.<br/><br/>" + a("#store", "Online Storefronts") + " · " + a("tel:" + TEL_INTL, "Call " + TEL_INTL)
+      ko: "베타콜과 파보겔은 <b>네이버 스마트스토어·쿠팡 공식 입점 몰</b>에서 구매 가능하며, <b>몬스멕타</b>는 공식 브랜드몰(<a href=\"https://monsmecta.kr\" target=\"_blank\">monsmecta.kr</a>)에서 즉시 주문하실 수 있습니다.<br/>※ <b>로타갈 백신</b>은 축산 백신 품목이므로 전화(<a href=\"tel:" + TEL + "\">" + TEL + "</a>) 또는 이메일 상담을 통해 공급 단가를 안내해 드립니다.<br/><br/>" + a("#store", "온라인 스토어 바로가기") + " · " + a("https://monsmecta.kr", "몬스멕타 공식몰"),
+      en: "VETACOL and PARVOGEL are available via official <b>Naver Smart Store & Coupang storefronts</b>, and <b>MONSMECTA</b> can be ordered directly via its official store (<a href=\"https://monsmecta.kr\" target=\"_blank\">monsmecta.kr</a>).<br/>※ <b>ROTAGAL vaccine</b> is a veterinary biological product; contact us at <a href=\"tel:" + TEL_INTL + "\">" + TEL_INTL + "</a> or <a href=\"mailto:" + EMAIL + "\">" + EMAIL + "</a> for supply terms.<br/><br/>" + a("#store", "Online Storefronts") + " · " + a("https://monsmecta.kr", "monsmecta.kr Official Store")
     },
     {
       kw: ["재고", "유통기한", "납기", "배송", "delivery", "shipping", "stock", "inventory"],
