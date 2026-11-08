@@ -29,38 +29,73 @@
 <link rel="preload" as="image" href="assets/img/hero-main.jpg" fetchpriority="high" />
 <!-- Google Fonts removed for performance -->
 <link rel="stylesheet" href="css/style.css?v=20260901_16" />
-<script type="application/ld+json">
+<script id="geo-dynamic-schema" type="application/ld+json">
 {
-  "@context": "https://schema.org"
-  "@type": "Organization"
-  "name": "㈜한국아그로"
-  "alternateName": ["Korea Agro Co. Ltd." "AgroKorea"]
-  "url": "https://www.agrokorea.net/"
-  "logo": "https://www.agrokorea.net/assets/img/logo.png"
-  "description": "기능성 사료첨가제·생균제·백신 등 과학으로 검증된 지속가능한 축산 솔루션 기업. 대표 브랜드 ROTAGAL VETACOL PARVOGEL MONSMECTA."
-  "email": "name_hyosun@naver.com"
-  "telephone": "+82-2-6949-5708"
-  "faxNumber": "+82-2-6949-5709"
-  "address": {
-    "@type": "PostalAddress"
-    "streetAddress": "큰우물로 75 성지빌딩 1506호"
-    "addressLocality": "마포구"
-    "addressRegion": "서울특별시"
-    "postalCode": "04128"
-    "addressCountry": "KR"
-  }
-  "contactPoint": [{
-    "@type": "ContactPoint"
-    "telephone": "+82-2-6949-5708"
-    "contactType": "sales"
-    "areaServed": ["KR" "ASIA" "EU" "OCEANIA"]
-    "availableLanguage": ["ko" "en"]
-  }]
-  "sameAs": [
-    "https://rotagal.kr"
-    "https://vetacol.kr"
-    "https://parvogel.kr"
-    "https://monsmecta.kr"
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.agrokorea.net/#organization",
+      "name": "㈜한국아그로",
+      "alternateName": [
+        "Korea Agro Co., Ltd.",
+        "AgroKorea"
+      ],
+      "url": "https://www.agrokorea.net/",
+      "logo": "https://www.agrokorea.net/assets/img/logo.png",
+      "description": "기능성 사료첨가제·생균제·백신 등 과학으로 검증된 지속가능한 축산·반려동물 바이오 헬스케어 기업. 대표 브랜드 ROTAGAL, VETACOL, PARVOGEL, MONSMECTA.",
+      "email": "name_hyosun@naver.com",
+      "telephone": "+82-2-6949-5708",
+      "faxNumber": "+82-2-6949-5709",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "큰우물로 75 성지빌딩 1506호",
+        "addressLocality": "마포구",
+        "addressRegion": "서울특별시",
+        "postalCode": "04128",
+        "addressCountry": "KR"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+82-2-6949-5708",
+          "contactType": "sales",
+          "areaServed": [
+            "KR",
+            "ASIA",
+            "EU",
+            "OCEANIA"
+          ],
+          "availableLanguage": [
+            "ko",
+            "en"
+          ]
+        }
+      ],
+      "sameAs": [
+        "https://rotagal.kr",
+        "https://vetacol.kr",
+        "https://parvogel.kr",
+        "https://monsmecta.kr",
+        "https://snj-vet.com"
+      ]
+    }
+  ]
+}
+</script>
+  <script id="geo-weekly-ld" type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "송아지 설사 예방 백신 프로그램 골든타임 관리 요령은?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "출생 후 6시간 이내에 초유 면역글로불린(IgG), 유청단백, MCT 에너지, 바실러스 생균이 함유된 15ml 시린지를 경구 급여하여 수동면역과 기립 에너지를 동시에 확보합니다."
+      }
+    }
   ]
 }
 </script>
