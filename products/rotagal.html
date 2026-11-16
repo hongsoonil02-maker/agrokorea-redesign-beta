@@ -319,7 +319,7 @@
   var modal = document.getElementById('scanModal');
   var close = document.getElementById('closeScanModal');
   if(btn && modal && close){
-    btn.addEventListener('click' function(){
+    btn.addEventListener('click', function(){
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
     });
@@ -327,11 +327,11 @@
       modal.classList.remove('active');
       document.body.style.overflow = '';
     }
-    close.addEventListener('click' hide);
-    modal.addEventListener('click' function(e){
+    close.addEventListener('click', hide);
+    modal.addEventListener('click', function(e){
       if(e.target === modal) hide();
     });
-    document.addEventListener('keydown' function(e){
+    document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && modal.classList.contains('active')) hide();
     });
   }

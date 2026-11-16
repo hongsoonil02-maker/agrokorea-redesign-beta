@@ -620,9 +620,9 @@ body.chat-open .chat-panel{display:flex}
 .press-stat-item span{
   display:block;
   margin-top:4px;
-  font-size:12px;
+  font-size:13px;
   font-weight:700;
-  color:#64748b;
+  color:#333333;
 }
 .press-content{
   font-size:16.5px;
@@ -646,9 +646,9 @@ body.chat-open .chat-panel{display:flex}
   margin-top:24px;
   padding-top:16px;
   border-top:1px dashed #d1d5db;
-  font-size:13px;
+  font-size:13.5px;
   font-weight:600;
-  color:#6b7280;
+  color:#333333;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -722,9 +722,9 @@ body.chat-open .chat-panel{display:flex}
   margin-bottom:4px;
 }
 .poster-trial-box p{
-  font-size:14.5px;
+  font-size:15.5px;
   color:rgba(255,255,255,.94);
-  line-height:1.6;
+  line-height:1.75;
   margin:0;
 }
 .poster-pathogens{
@@ -751,7 +751,8 @@ body.chat-open .chat-panel{display:flex}
   background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12);
   border-radius:12px;
-  font-size:13.5px;
+  font-size:15px;
+  line-height:1.65;
   font-weight:600;
   color:#ffffff;
 }
@@ -798,9 +799,9 @@ body.chat-open .chat-panel{display:flex}
   gap:8px;
 }
 .poster-protocol li{
-  font-size:13px;
+  font-size:15px;
   color:rgba(255,255,255,.9);
-  line-height:1.55;
+  line-height:1.7;
   display:flex;
   align-items:baseline;
   gap:8px;
@@ -818,9 +819,9 @@ body.chat-open .chat-panel{display:flex}
   background:rgba(201,236,80,.1);
   border:1px solid rgba(201,236,80,.25);
   border-radius:12px;
-  font-size:12.5px;
+  font-size:15px;
   color:rgba(255,255,255,.92);
-  line-height:1.55;
+  line-height:1.7;
 }
 .poster-adjuvant strong{
   color:#c9ec50;
@@ -955,7 +956,7 @@ body.chat-open .chat-panel{display:flex}
   .press-paper{padding:26px 20px}
   .press-poster{padding:26px 20px}
   .press-stats-row{grid-template-columns:1fr;gap:14px}
-  .press-content{font-size:15.5px;line-height:1.7}
+  .press-content{font-size:16.5px;line-height:1.8}
   .site-header .container{height:68px;gap:8px;justify-content:space-between}
   .brand{flex-shrink:0}
   .brand-logo{height:28px;width:auto;flex-shrink:0;object-fit:contain}
