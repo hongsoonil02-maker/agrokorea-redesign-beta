@@ -211,6 +211,10 @@ body.menu-open .mobile-menu{transform:none;visibility:visible}
 .news-card p{margin-top:12px;font-size:14px;color:var(--ink-soft);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex-grow:1}
 .nc-arrow{margin-top:20px;font-size:13.5px;font-weight:800;color:var(--forest);display:inline-flex;gap:6px;align-items:center}
 .news-more{margin-top:40px;text-align:center}
+.community-tabs{display:inline-flex;gap:6px;margin-bottom:30px;padding:5px;background:var(--surface);border:1px solid var(--line);border-radius:999px}
+.community-tabs a{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 22px;border-radius:999px;font-size:14.5px;font-weight:800;color:var(--ink-soft)}
+.community-tabs a:hover{background:var(--lime-soft);color:var(--forest-deep)}
+.community-tabs a[aria-current="page"]{background:var(--forest);color:#ffffff}
 
 .cta-band-wrap{width:min(1240px,calc(100% - 48px));margin-inline:auto;padding:0 0 40px}
 .cta-band{position:relative;overflow:hidden;background:#ffffff;border:1.5px solid rgba(18,64,46,.12);border-radius:22px;padding:26px 36px;color:var(--ink);box-shadow:0 10px 30px -10px rgba(18,64,46,.06)}
