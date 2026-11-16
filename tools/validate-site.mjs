@@ -9,6 +9,8 @@ const files = [
   "news.html",
   "notices.html",
   "contact.html",
+  "privacy.html",
+  "terms.html",
   "products/rotagal.html",
   "products/vetacol.html",
   "products/parvogel.html",
@@ -24,6 +26,8 @@ const files = [
   "en/news.html",
   "en/notices.html",
   "en/contact.html",
+  "en/privacy.html",
+  "en/terms.html",
   "en/products/rotagal.html",
   "en/products/vetacol.html",
   "en/products/parvogel.html",
@@ -48,6 +52,9 @@ for (const f of files) {
     [html.includes("apple-touch-icon"), `${f}: apple icon linked`],
     [html.includes("menuOpen"), `${f}: mobile menu included`]
   ];
+  const storeUrl = "https://smartstore.naver.com/petschury/profile";
+  const storeLinkCount = html.split(`href="${storeUrl}"`).length - 1;
+  checks.push([storeLinkCount >= 2, `${f}: smart store linked in desktop and mobile navigation`]);
   const jsonld = html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/);
   if (jsonld) {
     try { JSON.parse(jsonld[1]); checks.push([true, `${f}: JSON-LD valid`]); }
