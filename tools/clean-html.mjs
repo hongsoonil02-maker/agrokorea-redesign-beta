@@ -30,8 +30,8 @@ function cleanProductGrids() {
     'en/products/compound-feed.html'
   ];
   const expectedCounts = {
-    'products/feed-additives.html': 37,
-    'en/products/feed-additives.html': 37,
+    'products/feed-additives.html': 38,
+    'en/products/feed-additives.html': 38,
     'products/compound-feed.html': 12,
     'en/products/compound-feed.html': 12
   };
