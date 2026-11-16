@@ -12,7 +12,7 @@ function getHtmlFiles(dir) {
     const stat = statSync(full);
     if (stat.isDirectory()) {
       results = results.concat(getHtmlFiles(full));
-    } else if (entry.endsWith(".html")) {
+    } else if (entry.endsWith(".html") && !/^naver[0-9a-f]+\.html$/i.test(entry)) {
       results.push(full);
     }
   }
@@ -106,3 +106,4 @@ for (const filePath of htmlFiles) {
 
 console.log(`\n================================`);
 console.log(`Audit Finished: ${totalErrors} Errors, ${totalWarnings} Warnings`);
+process.exitCode = totalErrors ? 1 : 0;
