@@ -22,5 +22,43 @@ function cleanAllDir(dir) {
   }
 }
 
-cleanAllDir('.');
-console.log('Complete cleanup done.');
+function cleanProductGrids() {
+  const files = [
+    'products/feed-additives.html',
+    'en/products/feed-additives.html',
+    'products/compound-feed.html',
+    'en/products/compound-feed.html'
+  ];
+  const expectedCounts = {
+    'products/feed-additives.html': 37,
+    'en/products/feed-additives.html': 37,
+    'products/compound-feed.html': 12,
+    'en/products/compound-feed.html': 12
+  };
+
+  for (const file of files) {
+    const content = fs.readFileSync(file, 'utf8');
+    const grid = content.match(/(<div class="prod-grid">)([\s\S]*?)\n      <\/div>/);
+    if (!grid) throw new Error(`Product grid not found in ${file}`);
+
+    const cards = [...grid[2].matchAll(/<a class="prod-card"[^>]*data-uid="([^"]+)"/g)].map(m => m[1]);
+    if (cards.length !== expectedCounts[file] || new Set(cards).size !== cards.length) {
+      throw new Error(`Unexpected product cards in ${file}: ${cards.join(', ')}`);
+    }
+
+    const remainder = content.slice(grid.index + grid[0].length);
+    const sectionEnd = /\r?\n    <\/div>\r?\n  <\/section>/.exec(remainder);
+    if (!sectionEnd) throw new Error(`Product section end not found in ${file}`);
+    const containerEnd = grid.index + grid[0].length + sectionEnd.index;
+    const cleaned = content.slice(0, grid.index) + grid[0] + content.slice(containerEnd);
+    fs.writeFileSync(file, cleaned, 'utf8');
+    console.log(`Removed duplicate product cards in ${file}`);
+  }
+}
+
+if (process.argv.includes('--product-grids')) {
+  cleanProductGrids();
+} else {
+  cleanAllDir('.');
+  console.log('Complete cleanup done.');
+}

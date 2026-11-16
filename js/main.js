@@ -119,21 +119,47 @@
     var data = window.PRODUCT_DATA;
     var byUid = {};
     data.forEach(function (p) { byUid[p.uid] = p; });
+    var isEnglish = (document.documentElement.lang || "ko").toLowerCase().indexOf("en") === 0;
+    var copy = {
+      dialog: isEnglish ? "Product details" : "제품 상세 정보",
+      close: isEnglish ? "Close" : "닫기",
+      buy: isEnglish ? "Contact us" : "구매 문의하기",
+      contact: isEnglish ? "/en/contact.html" : "/contact.html",
+      empty: isEnglish ? "Please contact us for product details." : "제품 상세정보는 문의해 주세요.",
+      fields: isEnglish ? [
+        ["Description", "description"],
+        ["Key ingredients", "ingredients"],
+        ["Target animals", "targetLivestock"],
+        ["Directions", "usage"],
+        ["Packaging", "packaging"],
+        ["Shelf life", "shelfLife"],
+        ["Manufacturer & origin", "manufacturer"]
+      ] : [
+        ["제품설명", "description"],
+        ["주요성분 및 함량", "ingredients"],
+        ["대상축종", "targetLivestock"],
+        ["용법 및 용량", "usage"],
+        ["포장단위", "packaging"],
+        ["제품유효기간", "shelfLife"],
+        ["제조사 및 원산지", "manufacturer"]
+      ]
+    };
+    var lastTrigger = null;
 
     var modalWrap = document.createElement("div");
     modalWrap.className = "prod-modal-backdrop";
     modalWrap.setAttribute("id", "prodModal");
     modalWrap.setAttribute("role", "dialog");
     modalWrap.setAttribute("aria-modal", "true");
-    modalWrap.setAttribute("aria-label", "제품 상세 정보");
+    modalWrap.setAttribute("aria-label", copy.dialog);
     modalWrap.innerHTML =
       '<div class="prod-modal" role="document">' +
-      '<button class="prod-modal-close" aria-label="닫기">&times;</button>' +
+      '<button class="prod-modal-close" aria-label="' + copy.close + '">&times;</button>' +
       '<img class="prod-modal-img" alt="" />' +
       '<div class="prod-modal-body">' +
       '<h3 class="prod-modal-name"></h3>' +
       '<div class="prod-modal-content"></div>' +
-      '<a class="prod-modal-buy" href="/contact.html">구매 문의하기 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>' +
+      '<a class="prod-modal-buy" href="' + copy.contact + '">' + copy.buy + ' <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>' +
       "</div>" +
       "</div>";
     document.body.appendChild(modalWrap);
@@ -152,23 +178,15 @@
         .replace(/"/g, "&quot;");
     }
 
-    function render(p) {
+    function render(p, card) {
       if (!p) return;
-      imgEl.src = p.image;
+      var cardImg = card && card.querySelector(".prod-img");
+      imgEl.src = cardImg ? cardImg.getAttribute("src") : p.image;
       imgEl.alt = p.name;
       nameEl.textContent = p.name;
 
       var html = "";
-      var fields = [
-        ["제품설명", "description"],
-        ["주요성분 및 함량", "ingredients"],
-        ["대상축종", "targetLivestock"],
-        ["용법 및 용량", "usage"],
-        ["포장단위", "packaging"],
-        ["제품유효기간", "shelfLife"],
-        ["제조사 및 원산지", "manufacturer"],
-      ];
-      fields.forEach(function (pair) {
+      copy.fields.forEach(function (pair) {
         var label = pair[0];
         var value = p[pair[1]];
         if (value) {
@@ -176,12 +194,12 @@
             .split("\n")
             .map(function (l) { return l.trim(); })
             .filter(Boolean);
-          if (pair[0] === "주요성분 및 함량") {
+          if (pair[1] === "ingredients") {
             html +=
               '<div class="prod-modal-section"><h4>' +
               label +
               '</h4><ul><li>' +
-              lines.join("</li><li>") +
+              lines.map(esc).join("</li><li>") +
               "</li></ul></div>";
           } else {
             html +=
@@ -193,14 +211,18 @@
           }
         }
       });
+      if (!html) {
+        html = '<div class="prod-modal-section"><h4>' + copy.dialog + "</h4><p>" + copy.empty + "</p></div>";
+      }
       contentEl.innerHTML = html;
-      buyEl.href = "/contact.html";
+      buyEl.href = copy.contact;
     }
 
-    function openModal(uid) {
+    function openModal(uid, card) {
       var p = byUid[String(uid)];
       if (!p) return;
-      render(p);
+      lastTrigger = card || null;
+      render(p, card);
       modalWrap.classList.add("open");
       document.body.style.overflow = "hidden";
       closeBtn.focus();
@@ -209,6 +231,10 @@
     function closeModal() {
       modalWrap.classList.remove("open");
       document.body.style.overflow = "";
+      if (lastTrigger) {
+        lastTrigger.focus();
+        lastTrigger = null;
+      }
     }
 
     closeBtn.addEventListener("click", closeModal);
@@ -226,7 +252,7 @@
       .forEach(function (card) {
         card.addEventListener("click", function (e) {
           e.preventDefault();
-          openModal(card.getAttribute("data-uid"));
+          openModal(card.getAttribute("data-uid"), card);
         });
         card.style.cursor = "pointer";
       });
