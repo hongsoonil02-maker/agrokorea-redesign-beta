@@ -96,25 +96,16 @@
   function renderStoreStrip() {
     var strip = document.querySelector("[data-store-strip]");
     if (!strip) { return; }
-    var cards = "";
-    STORES.forEach(function (p) {
-      var links = buyButtons(p);
-      var siteLink = p.vetOnly
-        ? '<span class="buy-btn" style="cursor:default;opacity:0.85;background:#eeebe4;border-color:rgba(18,64,46,.15);color:#5c7068"><i class="dot" style="background:#5c7068"></i>' +
-          (lang === "ko" ? "동물병원 전용 (인증 필요)" : "Clinic only (Verification req.)") + "</span>"
-        : '<a class="buy-btn" target="_blank" rel="noopener" href="' + esc(p.site) + '">' +
-          '<i class="dot" style="background:' + esc(p.accent) + '"></i>' +
-          (lang === "ko" ? "공식 브랜드몰" : "Official Brand Store") + "</a>";
-      cards +=
-        '<article class="store-card">' +
-        '<span class="sc-brand"><i style="background:' + esc(p.accent) + '"></i>AgroKorea Official</span>' +
-        "<h3>" + esc(p.name) + "</h3>" +
-        "<p>" + esc(p.desc[lang]) + "</p>" +
-        '<div class="sc-links">' + (links || siteLink) + "</div>" +
-        "</article>";
-    });
-    if (!cards) { return; }
-    strip.innerHTML = cards;
+    strip.innerHTML =
+      '<a class="store-banner" href="https://smartstore.naver.com/petschury/profile" target="_blank" rel="noopener">' +
+      '<span class="store-banner-icon" aria-hidden="true">N</span>' +
+      '<span class="store-banner-copy"><strong>' +
+      (lang === "ko" ? "한국아그로 네이버 스마트스토어" : "Korea Agro Naver Smart Store") +
+      '</strong><span>' +
+      (lang === "ko" ? "구매 가능한 제품과 실시간 가격·재고를 한 곳에서 확인하세요." : "Check available products, current prices, and stock in one place.") +
+      '</span></span><span class="store-banner-action">' +
+      (lang === "ko" ? "스토어 방문" : "Visit store") +
+      ' <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>';
     var section = strip.closest("section[hidden]");
     if (section) { section.removeAttribute("hidden"); }
     if ("IntersectionObserver" in window) {

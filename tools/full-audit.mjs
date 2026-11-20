@@ -7,12 +7,12 @@ function getHtmlFiles(dir) {
   let results = [];
   const entries = readdirSync(dir);
   for (const entry of entries) {
-    if (entry === "node_modules" || entry === ".git" || entry === "tools") continue;
+    if (entry === "node_modules" || entry === "tools" || entry.startsWith(".")) continue;
     const full = join(dir, entry);
     const stat = statSync(full);
     if (stat.isDirectory()) {
       results = results.concat(getHtmlFiles(full));
-    } else if (entry.endsWith(".html")) {
+    } else if (entry.endsWith(".html") && !/^naver[0-9a-f]+\.html$/i.test(entry)) {
       results.push(full);
     }
   }
@@ -106,3 +106,4 @@ for (const filePath of htmlFiles) {
 
 console.log(`\n================================`);
 console.log(`Audit Finished: ${totalErrors} Errors, ${totalWarnings} Warnings`);
+process.exitCode = totalErrors ? 1 : 0;
