@@ -7,7 +7,7 @@ function getHtmlFiles(dir) {
   let results = [];
   const entries = readdirSync(dir);
   for (const entry of entries) {
-    if (entry === "node_modules" || entry === ".git" || entry === "tools") continue;
+    if (entry === "node_modules" || entry === "tools" || entry.startsWith(".")) continue;
     const full = join(dir, entry);
     const stat = statSync(full);
     if (stat.isDirectory()) {
